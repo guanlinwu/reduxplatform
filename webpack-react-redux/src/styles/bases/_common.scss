@@ -1,0 +1,73 @@
+/*
+*存放全站通用的样式
+*/
+@import "../utils/variables";
+@import "../utils/mixins";
+@import "../utils/placeholders";
+.g-wrapper{
+    @include max-width($g-max-width);
+    position: relative;
+}
+/************功能样式f-*************/
+//清楚浮动与浮动
+.f-clearfix{
+    @extend %clearfix;
+}
+.f-fl {
+    float: left;
+}
+.f-fr {
+    float: right;
+}
+
+//文本溢出省略号
+.f-ellipsis{
+    @extend %ellipsis;
+}
+//1px 细线
+.f-line{
+    @include border-width-1px(1,0,0,0);
+}
+
+.p-relative{
+    position: relative;
+}
+.p-absolute{
+    position: absolute;
+}
+
+//隐藏
+.f-none{
+  display: none;
+}
+//处理图片
+[class^="i-"],
+[class^="u-icon-"] {
+  display: inline-block;
+  vertical-align: middle;
+  //顺时针旋转90度
+  &.e-right{
+    @include prefix(transform, rotateZ(90deg));
+  }
+  //顺时针旋转180度
+  &.e-bottom{
+    @include prefix(transform, rotateZ(180deg));
+  }
+}
+//该属性可以使图标向右垂直居中
+.e-position-right-center{
+    position: absolute;
+    right: .30rem;
+    top: 50%;
+    @include prefix(transform,translate(0, -50%));
+    line-height: 1;
+}
+//该属性可以使图标向左垂直居中
+.e-position-left-center{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    @include prefix(transform,translate(0, -50%));
+    line-height: 1;
+}
+

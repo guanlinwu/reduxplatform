@@ -1,0 +1,9 @@
+@import "variables";
+
+//单位转换，转换成
+@function rem($size){//$px为需要转换的尺寸
+    @return $size * $g-rem-base  / (750 * 100) * 1rem;
+}
+// @function rem($size){//$px为需要转换的尺寸
+//     @return $size / $g-rem-base  * 1rem;
+// }

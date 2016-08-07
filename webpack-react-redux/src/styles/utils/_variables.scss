@@ -1,0 +1,33 @@
+$g-bg-color: #fff; //全站背景颜色
+$g-font-family: 'Microsoft Yahei', 'Helvetica Neue', Helvetica, STHeiTi, sans-serif;//全站字体
+$g-font-size:312.5%;// 50px
+// $g-font-size:floor(640/750*50px);// 50px
+$g-rem-base: 750 !default;//rem单位转换的基准，以750宽度时对应font-size：100px
+$g-max-width: 750px;//全站最大宽度
+
+$g-xycolor: #e4007f;//红色
+$g-xycolor-active: #cb2b82;//
+$g-xycolor-grey: #999;//灰色
+$g-xycolor-red: #f1368d;//
+$g-xycolor-placeholder: #aaa;//
+$g-bordercolor: #e7e7e7;//普通细线
+$g-bordercolor-dashed: #d3d3d3;//虚线
+$g-bordercolor-fixed: rgba(221,221,221,.9);//置顶线
+$g-clickable: #333;//
+
+$g-zindex-seed-normal: 1;//
+$g-zindex-seed-loading: 100;//
+$g-zindex-seed-mask: 500;//
+$g-zindex-seed-special: 1000;
+
+$g-btn-purple: #de3d96;//不带边框按钮，粉红色原始状态 背景颜色
+$g-btn-purple-active: #cb2b82;//不带边框按钮，粉红色按下状态 背景颜色
+$g-btn-disabled: #e0e0e1;//不带边框按钮，不可点击状态 背景颜色
+$g-btn-disabled-fontcolor: #bfbfbf;//不带边框按钮，不可点击 状态 字体颜色
+$g-btnborder-purle: #e4007f;//带边框按钮，粉红色原始状态 背景、字体颜色
+$g-btnborder-purle-active: #f498cd;//带边框按钮，粉红色按下状态 背景、字体颜色
+$g-btnborder-gray: #585c64;//带边框按钮，灰色原始状态 背景、字体颜色
+$g-btnborder-gray-active: #bcbec1;//带边框按钮，灰色按下状态 背景、字体颜色
+$g-btnborder-lightgray: #585c64;//带边框按钮，浅灰色原始状态 背景、字体颜色
+$g-btnborder-lightgray-active: #bcbec1;//带边框按钮，浅灰色按下状态 背景、字体颜色
+$g-btnborder-disabled: #f498cd;//带边框按钮，不可点击状态 背景、字体颜色

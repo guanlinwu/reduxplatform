@@ -1,0 +1,105 @@
+@import "utils/variables";
+@import "utils/prefixer";
+@import "utils/mixins";
+
+   
+/*
+* linso.wu
+*/
+
+//默认背景白色,字体颜色为#585c64
+.u-btn{
+    @include prefix(box-sizing, border-box);
+    @include prefix(border-radius, .04rem);
+    display: inline-block;
+
+    height: .88rem;
+    text-align: center;
+    font-size: .32rem;
+    line-height: .88rem;
+    color: #585c64;
+    background-color: #fff;
+    cursor: pointer;
+    border: 1px solid $g-bordercolor;
+    //唯品红
+    &.e-purple{
+        color: #fff;
+        border: none;
+        background-color: $g-btn-purple;
+
+        &:active{
+            background-color: $g-btn-purple-active;
+        }
+    }
+    //唯品红不可用状态
+    &.e-disabled {
+        color: #bfbfbf;
+        border: none;
+        background: #e0e0e1;
+    }
+    //白色渐变底灰色边红色字体
+    &.e-white {
+        color: #ec5042;
+        border: 1px solid rgba(220,220,220,0.5);
+        /* background-color: #fbfbfb; */
+        background: -webkit-linear-gradient(top,#fdfdfd,#f8f8f8);
+    }
+    //宽度100%
+    &.e-full{
+        width: 100%;
+    }
+}
+//对于有边框的,默认黑色边框
+.u-btn-border{
+    @include prefix(box-sizing, border-box);
+    @include prefix(border-radius, .04rem);
+    display: inline-block;
+
+    padding: 0 .3rem;
+    height: .72rem;
+    font-size: .28rem;
+    text-align: center;
+    line-height: .72rem;
+    border: 1px solid #000;
+
+    &.e-purple{
+        border-color: $g-xycolor;
+        color: $g-xycolor;
+
+        &:active{
+            border-color: $g-btnborder-purle-active;
+            color: $g-btnborder-purle-active;
+        }
+    }
+
+    &.e-gray{
+        border-color: $g-btnborder-gray;
+        color: $g-btnborder-gray;
+
+        &:active{
+            border-color: $g-btnborder-gray-active;
+            color: $g-btnborder-gray-active;
+        }
+    }
+
+    &.e-lightgray{
+        border-color: $g-btnborder-lightgray;
+        color: $g-btnborder-lightgray;
+
+        &:not(.e-no-active){
+            &:active{
+                border-color: $g-btnborder-lightgray-active;
+                color: $g-btnborder-lightgray-active;
+            }
+        }
+    }
+
+    &.e-disabled{
+        border-color: $g-btnborder-disabled;
+        color: $g-btnborder-disabled;
+    }
+
+    >span.time{ /*支付时间*/
+        margin-left: .08rem;
+    }
+}

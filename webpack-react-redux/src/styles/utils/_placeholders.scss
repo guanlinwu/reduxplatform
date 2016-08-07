@@ -1,0 +1,29 @@
+/*如果某个@mixin无法设置默认的参数，那么这个@mixin要么可以用%来取代*/
+
+%clearfix {
+    content: ' ';
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+
+%ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: keep-all; 
+}
+
+%flex-parent {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+%flex-child {
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    flex: 1;
+}

@@ -1,0 +1,53 @@
+/*
+ * 主导航栏
+*/
+@import "utils/mixins";
+
+.m-card.nav {
+    background: transparent;
+}
+
+.m-nav{
+    &.e-gap-bottom{
+        margin-bottom: .2rem;
+    }
+
+    .nav-list{
+        @include prefix(box-sizing, border-box);
+        @include border-width-1px(1,1,1,1,#545e6e, .08rem);
+        @include prefix(border-radius, .04rem);
+        display:-webkit-box;
+        display: box;
+        flex-flow: row wrap;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    li.item{
+        -webkit-box-flex:1.0;
+        box-flex:1.0;
+        font-size: .28rem;//放大两倍
+        line-height: 2.5;
+
+        >a{
+            display: block;
+            color: #545e6e;
+            @include border-width-1px(0,1,0,0,#545e6e);
+        }
+        &.active{
+            background-color: #545e6e;
+            >a{
+                color: #fff;
+                background-color: #545e6e;
+            }
+        }
+
+        &:last-child{
+            >a{
+                border-right: none;
+                @include border-width-1px(0,0,0,0,#545e6e);
+
+            }
+        }
+    }
+}

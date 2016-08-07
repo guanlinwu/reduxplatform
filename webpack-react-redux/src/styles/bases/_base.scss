@@ -1,0 +1,77 @@
+// @import "compass/css3";
+// @import "compass/layout";
+
+@charset "utf-8";
+
+@import "../utils/variables";
+
+html, body, h1, h2, h3, h4, h5, h6, p, ul, li, input, button, textarea, section {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+html {
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    font-size: $g-font-size;
+}
+
+body {
+    overflow-x: hidden;
+    height: 100%;
+    background-color: $g-bg-color;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    background: url(../panels/bg.png) no-repeat center center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+body, input, button, textarea {
+    font-family: $g-font-family;
+    font-size: 0.28rem; // => 14px
+    border: none;
+    outline: none;
+}
+
+a, img {
+    -webkit-touch-callout: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    /*-webkit-user-modify: read-write-plaintext-only;*/
+    -webkit-tap-highlight-color: transparent;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+
+    th {
+        background-color: #f7f7f7;
+    }
+
+    th, td {
+        border: 1px solid #dedde0;
+    }
+}
+input::-webkit-input-placeholder{
+    color: #ccc;
+}

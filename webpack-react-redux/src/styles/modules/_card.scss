@@ -1,0 +1,42 @@
+/**
+ * 卡片组件
+ */
+ @import "utils/mixins";
+/*
+ linso.wu
+*/
+ .m-card {
+    @include prefix(box-sizing, border-box);
+    position: relative;
+    min-width: 320px;
+    @include max-width($g-max-width);
+
+    &.e-gap {
+        margin: .3rem 0;
+    }
+    
+    &.e-gap-bottom{
+        margin-bottom: .3rem;
+    }
+    
+    &.e-gap-top{
+        margin-top: .3rem;
+    }
+
+    &.e-border-around {
+        @include border-width-1px(1,1,1,1);
+    }
+
+    &.e-border-top-bottom {
+        @include border-width-1px(1,0,1,0);
+    }
+
+    &.e-border-bottom {
+        @include border-width-1px(0,0,1,0);
+    }
+
+    &.e-innergap {
+        padding: .2rem .3rem;
+    }
+ }
+
