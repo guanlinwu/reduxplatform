@@ -1,3 +1,8 @@
+/**
+ * 主组件，顶层组件
+ */
+'use strict';
+
 import React from 'react';
 import { Link } from 'react-router';
 

@@ -1,6 +1,7 @@
 /*
-*
+* 行为
 */
+'use strict';
 
 export function increment(i) {
   return {

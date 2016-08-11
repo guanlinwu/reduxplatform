@@ -2,8 +2,10 @@
 
 var gulp             = require('gulp'),
     gutil            = require('gulp-util'),
+    path             = require('path'),
     webpack          = require('webpack'),
     WebpackDevServer = require('webpack-dev-server'),
+    mockServer       = require('./mock.server.js'),
 
     /** @type {Object} webpack配置 */
     WebpackConfig    = require('./webpack.config'),
@@ -14,7 +16,6 @@ var gulp             = require('gulp'),
     /** @type {string} host */
     host             = pathConfig.host;
 
-require('./mock.server.js')();
 
 /**
  * 普通webpack打包
@@ -35,6 +36,8 @@ gulp.task('webpack', function(callback) {
  * webpack打包-web-dev-server模式
  */
 gulp.task('server', function () {
+    mockServer();
+    
     var config          =   WebpackConfig,
         compiler        =    {},
         devServer       =    {};
@@ -46,10 +49,10 @@ gulp.task('server', function () {
         }
         config.entry[entryItem].unshift('webpack/hot/dev-server', 'webpack-dev-server/client?http://' + host + ':' + ports);
     }
-
+console.log(config.output.publicPath);
     compiler           = webpack(config);
     devServer          = new WebpackDevServer(compiler, {
-        contentBase        : config.output.path,
+        // contentBase        : config.output.path,
         publicPath         : config.output.publicPath,
         hot                : true,
         stats              : config.devServer.stats,

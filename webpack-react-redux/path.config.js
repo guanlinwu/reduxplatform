@@ -21,8 +21,8 @@ let fs          = require('fs'),
     htmlEntries = [],
     /** @type {string} 应用资源路径入口 */
     jsEntries   = {
-        index: ['./src/main'],
-        vendor: ['zepto', 'react', 'lodash', 'react-dom']
+        index: ['./src/index'],
+        vendor: ['zepto', 'react', 'react-dom']
         // vendors : ['zepto']//引进公共lib的js
         //支持数组形式，将加载数组中的所有模块，但以最后一个模块作为输出
         // page2: ["./entry1", "./entry2"]
@@ -36,8 +36,8 @@ let fs          = require('fs'),
         // 'jquery'    : path.join(node_modules, 'jquery/dist/jquery'),
         'zepto'     : path.join(__dirname, 'src/scripts/libraries/zepto'),
         'react'     : path.join(node_modules, 'react/react'),
-        'react-dom' : path.join(node_modules, 'react-dom/dist/react-dom'),
-        'lodash'    : path.join(node_modules, 'lodash/lodash')
+        'react-dom' : path.join(node_modules, 'react-dom/dist/react-dom')
+        // 'lodash'    : path.join(node_modules, 'lodash/lodash')
     },
     /** @type {string} 项目信息文件 */
     mainFile    = path.join(assPath, 'sources.json'),
@@ -68,7 +68,7 @@ module.exports =  {
     /** @type {string} js文档路径   */
     docFile          : docFile,
     /** @type {string} 目标结果路径 */
-    desPath          : desPath,
+    desPath          : assPath,
     /** @type {string} 项目信息文件 */
     mainFile         : mainFile,
     /** @type {Array} 应用资源目录或者template模板入口目录 */

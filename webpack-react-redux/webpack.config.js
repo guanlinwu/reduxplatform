@@ -84,7 +84,7 @@ function plugins(config) {
             template : 'src/index.html',
             hash     : false,
             inject   : 'body',
-            filename : 'index.html'
+            filename : '../index.html'
         };
 
         conf.chunks = ['vendor', 'index'];
@@ -107,10 +107,11 @@ function webpackConfig(config) {
     var desPath     = config.desPath,       /** @type {string} 编译结果路径 */
         selfAlias   = config.alias,         /** @type {Object}配置文件引用路径别名 */
         jsEntries   = config.jsEntries;     /** @type {Object}入口文件路径 */
-
+console.log(desPath);
     return {
         entry: jsEntries,
         output: {
+            // path: '/assets',
             path: path.join(__dirname, desPath),
             publicPath : '/' + desPath + '/',//如果是开启服务器
             // publicPath : './',//如果是开启服务器

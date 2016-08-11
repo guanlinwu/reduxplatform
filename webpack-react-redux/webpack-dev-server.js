@@ -15,8 +15,8 @@ for(var entryItem in config.entry) {
     config.entry[entryItem].unshift('webpack/hot/dev-server', 'webpack-dev-server/client?http://' + configPath.host + ':' + configPath.ports);
 }
 new WebpackDevServer(webpack(config), {
-    contentBase        : config.output.path,
     publicPath         : config.output.publicPath,
+    // contentBase        : '/assets/',
     hot                : true,
     stats              : config.devServer.stats,
     proxy              : config.devServer.proxy,
