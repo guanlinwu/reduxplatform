@@ -48,7 +48,8 @@ function plugins(config) {
     plugins = plugins.concat([
         new webpack.optimize.DedupePlugin(),
         //提取独立样式css
-        new ExtractTextPlugin('[name]/styles/index.css'),
+        // new ExtractTextPlugin('[name]/styles/index.css'),
+        new ExtractTextPlugin('styles/index.css'),
         //热模块
         new webpack.HotModuleReplacementPlugin()
     ]);

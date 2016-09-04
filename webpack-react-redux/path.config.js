@@ -42,7 +42,7 @@ let fs          = require('fs'),
     /** @type {string} 项目信息文件 */
     mainFile    = path.join(assPath, 'sources.json'),
     /** @type {number} 端口 */
-    ports       = 8080,
+    ports       = 8383,
     /** @type {string} host */
     host        = '0.0.0.0';
 

@@ -8,7 +8,7 @@ const PhotoGrid = React.createClass({
   render() {
     return (
       <div className="photo-grid">
-        PhotoGrid
+        <button onClick={this.props.increment.bind(null, '5')} >PhotoGrid</button>
       </div>
     );
   }

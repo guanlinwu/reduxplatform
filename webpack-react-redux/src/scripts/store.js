@@ -13,12 +13,10 @@ import { browserHistory } from 'react-router';
 
 import rootReducer from 'scripts/reducers/index';
 
-import comments from 'scripts/data/comments';
-import posts from 'scripts/data/posts';
+import nav from 'scripts/data/nav';
 
 const defaultState = {
-  posts,
-  comments
+    nav
 };
 /**
 * 结合谷歌扩展插件
@@ -40,7 +38,6 @@ export const history = syncHistoryWithStore(browserHistory, store);
   We re-require() the reducers whenever any new code has been written.
   Webpack will handle the rest
 */
-console.log(store.getState());
 // if(module.hot) {
 //   module.hot.accept('./reducers/', () => {
 //     const nextRootReducer = require('./reducers/index').default;

@@ -4,6 +4,7 @@
 'use strict';
 
 export function increment(i) {
+  console.log(i);
   return {
     type: 'INCREMENT_LIKES',
     index: i
@@ -28,5 +29,25 @@ export function removeComment(postId, i){
     type: 'REMOVE_COMMENT',
     i,
     postId
+  };
+}
+
+/**
+ * nav
+ */
+export function goForward(item){
+  return {
+    type: 'GO_NAV_FORWARD',
+    item
+  };
+}
+
+/**
+ * actlist
+ */
+export function toggleFavor(item){
+  return {
+      type : 'TOGGLE_FAVOR',
+      item
   };
 }

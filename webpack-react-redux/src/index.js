@@ -13,12 +13,11 @@ import { Router, Route, IndexRoute} from 'react-router';
 /*
 *  Import Components
 */
-import App from 'scripts/components/App';
-import Single from 'scripts/components/Single';
-import PhotoGrid from 'scripts/components/PhotoGrid';
+import App from 'scripts/containers/App';
+import Home from 'scripts/containers/Home';
 
 /* Import CSS */
-// import 'styles/index.scss';
+import 'styles/index.scss';
 
 /* 
 * Import data store 
@@ -44,8 +43,7 @@ render(
     { /* Tell the Router to use our enhanced history */ }
     <Router history={history}>
       <Route path="/" component={App}>
-        <IndexRoute component={PhotoGrid} />
-        <Route path="/view/:postId" component={Single}></Route>
+        <IndexRoute component={Home} />
       </Route>
     </Router>
   </Provider>,

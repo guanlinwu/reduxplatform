@@ -13,10 +13,12 @@ import { combineReducers } from 'redux';
 */
 
 import { routerReducer } from 'react-router-redux'; // we need this for react-router
-import posts from 'scripts/reducers/posts';
-import comments from 'scripts/reducers/comments';
+import nav from 'scripts/reducers/nav';
 
 // Combine all our reducers togeher
-const rootReducer = combineReducers({ posts, comments, routing: routerReducer });
+const rootReducer = combineReducers({ 
+    nav,
+    routing: routerReducer 
+});
 
 export default rootReducer;

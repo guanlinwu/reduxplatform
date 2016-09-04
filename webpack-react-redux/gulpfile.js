@@ -2,7 +2,6 @@
 
 var gulp             = require('gulp'),
     gutil            = require('gulp-util'),
-    path             = require('path'),
     webpack          = require('webpack'),
     WebpackDevServer = require('webpack-dev-server'),
     mockServer       = require('./mock.server.js'),
@@ -58,6 +57,7 @@ console.log(config.output.publicPath);
         stats              : config.devServer.stats,
         proxy              : config.devServer.proxy,
         noInfo             : false,
+        // quiet              : true, //不显示进程
         historyApiFallback : true
     });
 
