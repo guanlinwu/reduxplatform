@@ -11,10 +11,6 @@ import ActListItem from 'scripts/components/actList/actListItem';
 export default class ActList extends React.Component {
     constructor(props){
         super(props);
-        console.log('ActList', props);
-        /*
-         * bind
-         */
     }
 
     componentDidMount() {
@@ -24,10 +20,13 @@ export default class ActList extends React.Component {
     }
 
     render() {
+        let { dispatch } = this.props;
         return (
-            <ul className ="m-list">
-                {this.props.actlist.actOptionArr.map((actOption, index) => <ActListItem {...this.props} data={actOption} key={index} index={index}/>)};
-            </ul>
+            <div className="actList">
+                <ul className ="m-list">
+                    {this.props.actlist && this.props.actlist.length > 0 && this.props.actlist.map((actOption, index) => <ActListItem dispatch={this.props.dispatch} data={actOption} key={index} index={index}/>)};
+                </ul>
+            </div>
         );
     }
 }
@@ -35,11 +34,11 @@ export default class ActList extends React.Component {
  * 默认属性
  */
 ActList.defaultProps = {
-    actlist    : {}
+    actlist    : []
 };
 /**
  * 属性类型
  */
 ActList.propTypes = {
-    actlist : React.PropTypes.object.isRequired
+    actlist : React.PropTypes.array.isRequired
 };

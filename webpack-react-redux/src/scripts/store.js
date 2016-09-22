@@ -14,9 +14,11 @@ import { browserHistory } from 'react-router';
 import rootReducer from 'scripts/reducers/index';
 
 import nav from 'scripts/data/nav';
+import actlist from 'scripts/data/actlist';
 
 const defaultState = {
-    nav
+    nav,
+    actlist
 };
 /**
 * 结合谷歌扩展插件

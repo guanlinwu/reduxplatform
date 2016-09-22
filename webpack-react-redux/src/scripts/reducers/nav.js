@@ -10,6 +10,7 @@ export default function nav(state = {}, action) {
         activeIndex : action.item.activeIndex,
         contentArr  : state.contentArr
       };
+      break;
     default:
       return state;
   }

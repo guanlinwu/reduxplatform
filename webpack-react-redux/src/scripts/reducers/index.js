@@ -14,10 +14,12 @@ import { combineReducers } from 'redux';
 
 import { routerReducer } from 'react-router-redux'; // we need this for react-router
 import nav from 'scripts/reducers/nav';
+import actlist from 'scripts/reducers/actlist';
 
 // Combine all our reducers togeher
 const rootReducer = combineReducers({ 
     nav,
+    actlist,
     routing: routerReducer 
 });
 

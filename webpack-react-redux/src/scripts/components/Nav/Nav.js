@@ -13,7 +13,9 @@ export default class Nav extends React.Component {
         super(props);
         console.log('Nav', props);
     }
+    componentDidMount() {
 
+    }
     render() {
         let activeIndex = this.props.nav.activeIndex;
 

@@ -10,6 +10,7 @@ import React from 'react';
 export default class NavItem extends React.Component {
     constructor(props){
         super(props);
+        this.clickRoute.bind(this);
     }
     clickRoute() {
         this.props.goForward({activeIndex: this.props.index});
