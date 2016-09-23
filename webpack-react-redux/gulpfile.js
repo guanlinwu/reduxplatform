@@ -35,7 +35,7 @@ gulp.task('webpack', function(callback) {
  * webpack打包-web-dev-server模式
  */
 gulp.task('server', function () {
-    mockServer();
+    // mockServer();
     
     var config          =   WebpackConfig,
         compiler        =    {},
