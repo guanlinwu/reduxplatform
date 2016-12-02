@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { navigateTo } from '../actions/navigator';
 import { constructUrl } from '../utils/RouteUtils';
 
 const propTypes = {

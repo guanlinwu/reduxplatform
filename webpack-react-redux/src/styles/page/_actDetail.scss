@@ -1,0 +1,68 @@
+/*
+ * 活动详情页
+ */
+.act-detail {
+	
+}
+
+//基本信息：价格，名称，剩余时间，地方（独立模块）
+.base-info{
+    padding: .2rem .3rem;
+    background: #fff;
+
+    .detail-pms{
+        font-size: .28rem;
+        line-height: .4rem;
+        color: #222;
+    }
+
+}
+.price-box{
+    margin: .18rem 0 .32rem;
+    position: relative;
+    font-size: 0;
+    line-height: 1;
+
+    .pricebox-price{
+        color: #222;
+        font-size: .2rem;
+
+        .pricebox-yen{
+            font-size: .36rem;
+        }
+
+        >em{
+            font-size: .52rem;
+            line-height: 1;
+            height: .52rem;
+            display: inline-block;
+        }
+    }
+
+    .pricebox-market{
+        margin: 0 .26rem 0 .14rem;
+        font-size: .3rem;
+        color: #98989f;
+
+        >del{
+
+        }
+    }
+
+    .pricebox-off{
+        display: inline-block;
+        margin-top: -.22rem;
+        padding: 0 .1rem;
+        height: .32rem;
+        font-size: .2rem;
+        line-height: .32rem;
+        vertical-align: middle;
+        text-align: center;
+        color: #e4007f;
+        @include border-width-1px(1,1,1,1,#ffb9df);
+
+        &:before{
+            @include prefix(border-radius, 2px);
+        }
+    }
+}

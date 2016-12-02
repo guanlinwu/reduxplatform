@@ -5,6 +5,8 @@
 /*
 *  Import Dependencies
 */
+import 'babel-polyfill';
+import 'isomorphic-fetch';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
@@ -15,12 +17,13 @@ import { Router, Route, IndexRoute} from 'react-router';
 */
 import App from 'scripts/containers/App';
 import Home from 'scripts/containers/Home';
+import ActDetail from 'scripts/containers/ActDetail';
 
 /* Import CSS */
 import 'styles/index.scss';
 
-/* 
-* Import data store 
+/*
+* Import data store
 */
 import store, { history } from 'scripts/store';
 
@@ -44,6 +47,8 @@ render(
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
+        <Route path="/" component={Home}/>
+        <Route path="actDetail/:id" component={ActDetail}/>
       </Route>
     </Router>
   </Provider>,

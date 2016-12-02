@@ -51,3 +51,27 @@ export function toggleFavor(item){
       item
   };
 }
+//fetch
+export function fetchActList(){
+  return dispatch => {
+    fetch('/actlist')
+      .then(response => response.json())
+      .then(json => dispatch(loadActList(json)));
+  };
+}
+
+export function loadActList(item){
+  return {
+      type : 'LOAD_ACTLIST',
+      item
+  };
+}
+
+
+// import * as actlistAction from 'scripts/actions/actlistAction';
+// import * as navAction from 'scripts/actions/navAction';
+
+// export default  {
+//   actlistAction,
+//   navAction
+// };

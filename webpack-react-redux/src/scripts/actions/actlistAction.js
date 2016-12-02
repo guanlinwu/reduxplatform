@@ -7,3 +7,18 @@ export function toggleFavor(item){
       item
   };
 }
+//fetch
+export function fetchActList(){
+  return dispatch => {
+    fetch('/actlist')
+      .then(response => response.json())
+      .then(json => dispatch(loadActList(json)));
+  };
+}
+
+export function loadActList(item){
+  return {
+      type : 'LOAD_ACTLIST',
+      item
+  };
+}

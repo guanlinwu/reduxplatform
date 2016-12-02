@@ -35,8 +35,8 @@ gulp.task('webpack', function(callback) {
  * webpack打包-web-dev-server模式
  */
 gulp.task('server', function () {
-    // mockServer();
-    
+    mockServer();
+
     var config          =   WebpackConfig,
         compiler        =    {},
         devServer       =    {};
@@ -46,7 +46,7 @@ gulp.task('server', function () {
         if(entryItem == 'vendor') {
             continue;
         }
-        config.entry[entryItem].unshift('webpack/hot/dev-server', 'webpack-dev-server/client?http://' + host + ':' + ports);
+        config.entry[entryItem].unshift('webpack-hot-middleware/client','webpack/hot/dev-server', 'webpack-dev-server/client?http://' + host + ':' + ports);
     }
 console.log(config.output.publicPath);
     compiler           = webpack(config);

@@ -15,12 +15,11 @@ export default class ActListItem extends React.Component {
     }
 
     render() {
-        let imgBox    = this.props.data.imgBox,
-            detailBox = this.props.data.detailBox;
+        let {imgBox, detailBox, id} = this.props.data;
         return (
             <li className="item">
-                <ActListImg data={imgBox} index={this.props.index}/>
-                <ActListDesc dispatch={this.props.dispatch} data={detailBox} index={this.props.index}/>
+                <ActListImg data={imgBox} index={this.props.index} id={id} />
+                <ActListDesc dispatch={this.props.dispatch} data={detailBox} index={this.props.index} />
             </li>
         );
     }

@@ -5,6 +5,9 @@
 
 export default function actlist(state = {}, action) {
   switch (action.type) {
+    /*
+     收藏活动
+     */
     case 'TOGGLE_FAVOR' :
 
       let actOptionArr   = state,
@@ -15,20 +18,27 @@ export default function actlist(state = {}, action) {
       actOption.detailBox = Object.assign({}, actOption.detailBox, {
         favor : actOption.detailBox.favor + 1,
         hasfavor : true
-      }); 
+      });
 		}
     else {
       actOption.detailBox = Object.assign({}, actOption.detailBox, {
         favor : actOption.detailBox.favor - 1,
         hasfavor : false
-      }); 
+      });
     }
-    return ([
+    return [
       ...actOptionArr.slice(0, index),
       actOption,
       ...actOptionArr.slice(index+1)
-    ]);
-		break;
+    ];
+    /*
+     加载请求到的活动列表
+     */
+    case 'LOAD_ACTLIST' :
+    return [
+      ...state,
+      ...action.item
+    ];
     default:
       return state;
   }

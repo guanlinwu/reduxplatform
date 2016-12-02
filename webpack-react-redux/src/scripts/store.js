@@ -10,16 +10,22 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
+import thunkMiddleware from 'redux-thunk';
+import createLogger from 'redux-logger';
 
 import rootReducer from 'scripts/reducers/index';
 
 import nav from 'scripts/data/nav';
 import actlist from 'scripts/data/actlist';
+import actdetail from 'scripts/data/actdetail';
 
 const defaultState = {
     nav,
-    actlist
+    actlist,
+    actdetail
 };
+
+const loggerMiddleware = createLogger();
 /**
 * 结合谷歌扩展插件
 * @see https://github.com/zalmoxisus/redux-devtools-extension#implementation
@@ -28,7 +34,13 @@ const enhancers = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f
 );
 
-const store = createStore(rootReducer, defaultState, enhancers);
+const store = createStore(rootReducer, defaultState, compose(
+  applyMiddleware(
+    thunkMiddleware,
+    loggerMiddleware
+  ),
+  enhancers
+));
 
 /**
 * we export history because we need it in `reduxstagram.js` to feed into <Router>
@@ -40,11 +52,11 @@ export const history = syncHistoryWithStore(browserHistory, store);
   We re-require() the reducers whenever any new code has been written.
   Webpack will handle the rest
 */
-// if(module.hot) {
-//   module.hot.accept('./reducers/', () => {
-//     const nextRootReducer = require('./reducers/index').default;
-//     store.replaceReducer(nextRootReducer);
-//   });
-// }
+if(module.hot) {
+  module.hot.accept('./reducers/', () => {
+    const nextRootReducer = require('./reducers/index').default;
+    store.replaceReducer(nextRootReducer);
+  });
+}
 
 export default store;

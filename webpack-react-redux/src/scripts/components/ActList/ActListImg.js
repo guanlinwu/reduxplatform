@@ -6,6 +6,7 @@
 'use strict';
 
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class ActListImg extends React.Component {
     constructor(props){
@@ -13,12 +14,12 @@ export default class ActListImg extends React.Component {
     }
 
     render() {
-        let data = this.props.data;
+        let {data, id} = this.props;
         return (
             <div className="p-relative">
-                <a className="item-pic" href="javascript:;">
+                <Link className="item-pic" href="javascript:;" to={`/actDetail/${id}`}>
                     <img src={data.imgUrl} alt="" />
-                </a>
+                </Link>
                 <div className="item-title">
                     <h3>{data.title}</h3>
                     <p>{data.desc}</p>

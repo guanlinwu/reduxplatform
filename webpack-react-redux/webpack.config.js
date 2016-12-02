@@ -85,6 +85,7 @@ function plugins(config) {
             template : 'src/index.html',
             hash     : false,
             inject   : 'body',
+            favicon  : 'favicon.ico',
             filename : '../index.html'
         };
 
@@ -149,7 +150,7 @@ console.log(desPath);
         plugins: plugins(config),
         resolve: {
             //省略后缀
-            extensions: ['', '.js', '.jsx', '.scss', '.html', '.png', '.jpg', 'jpeg', '.svg', '.gif'],
+            extensions: ['', '.js', '.jsx', '.scss', '.html', '.png', '.jpg', 'jpeg', '.svg', '.gif', '.json'],
             //别名
             alias: selfAlias
         },
@@ -165,6 +166,10 @@ console.log(desPath);
                     secure: false
                 },
                 '/total*': {
+                    target: 'http://localhost:9090',
+                    secure: false
+                },
+                '/actlist*': {
                     target: 'http://localhost:9090',
                     secure: false
                 }

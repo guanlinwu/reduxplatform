@@ -16,6 +16,8 @@ import Actlist from 'scripts/components/Actlist/Actlist';
  * 智能组件
  */
 class Home extends Component {
+  componentDidMount() {
+  }
   render() {
     return (
       <div className="home">

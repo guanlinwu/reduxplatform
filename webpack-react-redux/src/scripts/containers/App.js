@@ -26,7 +26,8 @@ App.propTypes = {
 function mapStateToProps(state) {
   return {
     nav: state.nav,
-    actlist: state.actlist
+    actlist: state.actlist,
+    actdetail: state.actdetail
   };
 }
 

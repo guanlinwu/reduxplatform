@@ -18,7 +18,6 @@ export default class Nav extends React.Component {
     }
     render() {
         let activeIndex = this.props.nav.activeIndex;
-
         return (
             <nav className="m-nav">
                 <ul className="nav-list">

@@ -14,6 +14,8 @@ export default class ActList extends React.Component {
     }
 
     componentDidMount() {
+        let { dispatch } = this.props;
+        dispatch(this.props.fetchActList);
     }
 
     componentWillUnmount() {
