@@ -7,7 +7,9 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actionCreators from 'scripts/actions/actionCreators';
+import * as actlistActionCreators from 'scripts/actions/actlistActionCreators';
+import * as navActionCreators from 'scripts/actions/navActionCreators';
+
 
 import Nav from 'scripts/components/Nav/Nav';
 import Actlist from 'scripts/components/Actlist/Actlist';
@@ -21,12 +23,20 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-        <Nav nav={this.props.nav} goForward={this.props.goForward}/>
+        <Nav nav={this.props.nav} navAction={this.props.navAction}/>
         <Actlist {...this.props} />
       </div>
     );
   }
 }
+
+/**
+ * 属性类型
+ */
+Home.propTypes = {
+    nav       : PropTypes.object.isRequired,
+    navAction : PropTypes.object.isRequired
+};
 
 Home.propTypes = {
   children: PropTypes.object.isRequired
@@ -34,13 +44,16 @@ Home.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    nav: state.nav,
-    actlist: state.actlist
+    nav     : state.nav,
+    actlist : state.actlist
   };
 }
 
-export function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actionCreators, dispatch);
+function mapDispatchToProps(dispatch) {
+  return {
+    navAction     : bindActionCreators(navActionCreators, dispatch),
+    actlistAction : bindActionCreators(actlistActionCreators, dispatch)
+  };
 }
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

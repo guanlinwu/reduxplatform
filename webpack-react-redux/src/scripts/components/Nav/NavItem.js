@@ -10,14 +10,14 @@ import React from 'react';
 export default class NavItem extends React.Component {
     constructor(props){
         super(props);
-        this.clickRoute.bind(this);
+        this.clickRoute = this.clickRoute.bind(this);
     }
     clickRoute() {
-        this.props.goForward({activeIndex: this.props.index});
+        this.props.navAction.goForward({activeIndex: this.props.index});
     }
     render() {
         return (
-            <li className={this.props.isActive ? 'item active' : 'item'}><a onClick={this.clickRoute.bind(this)} href="javascript:;">{this.props.content}</a></li>
+            <li className={this.props.isActive ? 'item active' : 'item'}><a onClick={this.clickRoute} href="javascript:;">{this.props.content}</a></li>
         );
     }
 }
@@ -33,7 +33,8 @@ NavItem.defaultProps = {
  * 属性类型
  */
 NavItem.propTypes = {
-    index    : React.PropTypes.number.isRequired,
-    content  : React.PropTypes.string.isRequired,
-    isActive : React.PropTypes.bool.isRequired
+    index     : React.PropTypes.number.isRequired,
+    content   : React.PropTypes.string.isRequired,
+    navAction : React.PropTypes.object.isRequired,
+    isActive  : React.PropTypes.bool.isRequired
 };

@@ -5,18 +5,16 @@
  */
 'use strict';
 
-import React from 'react';
-import {toggleFavor} from 'scripts/actions/actionCreators';
+import React, {Component, PropTypes} from 'react';
 
-export default class ActListDesc extends React.Component {
+export default class ActListDesc extends Component {
     constructor(props) {
         super(props);
         this.handleFavor = this.handleFavor.bind(this);
     }
 
     handleFavor() {
-        let { dispatch } = this.props;
-        dispatch(toggleFavor({index: this.props.index}));
+        this.props.actlistAction.toggleFavor({index: this.props.index});
     }
 
     render() {
@@ -37,3 +35,12 @@ export default class ActListDesc extends React.Component {
         );
     }
 }
+
+/**
+ * 属性类型
+ */
+ActListDesc.propTypes = {
+    index         : PropTypes.number.isRequired,
+    data          : PropTypes.object.isRequired,
+    actlistAction : PropTypes.object.isRequired
+};

@@ -2,11 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import { constructUrl } from '../utils/RouteUtils';
 
 const propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  dispatch: PropTypes.func.isRequired,
-  route: PropTypes.object.isRequired,
-  title: PropTypes.string,
+  children  : PropTypes.node,
+  className : PropTypes.string,
+  dispatch  : PropTypes.func.isRequired,
+  route     : PropTypes.object.isRequired,
+  title     : PropTypes.string
 };
 
 class Link extends Component {

@@ -5,28 +5,29 @@
  */
 'use strict';
 
-import React from 'react';
-import ActListItem from 'scripts/components/actList/actListItem';
+import React, {Component, PropTypes} from 'react';
+import ActListItem from 'scripts/components/ActList/actListItem';
+import 'scripts/components/ActList/_actList';
 
-export default class ActList extends React.Component {
+
+export default class ActList extends Component {
     constructor(props){
         super(props);
     }
 
     componentDidMount() {
-        let { dispatch } = this.props;
-        dispatch(this.props.fetchActList);
+        console.log('ActList', this.props);
+        this.props.actlistAction.fetchActList();
     }
 
     componentWillUnmount() {
     }
 
     render() {
-        let { dispatch } = this.props;
         return (
             <div className="actList">
                 <ul className ="m-list">
-                    {this.props.actlist && this.props.actlist.length > 0 && this.props.actlist.map((actOption, index) => <ActListItem dispatch={this.props.dispatch} data={actOption} key={index} index={index}/>)};
+                    {this.props.actlist && this.props.actlist.length > 0 && this.props.actlist.map((actOption, index) => <ActListItem data={actOption} key={index} index={index} actlistAction={this.props.actlistAction}/>)};
                 </ul>
             </div>
         );
@@ -42,5 +43,6 @@ ActList.defaultProps = {
  * 属性类型
  */
 ActList.propTypes = {
-    actlist : React.PropTypes.array.isRequired
+    actlist       : PropTypes.array.isRequired,
+    actlistAction : PropTypes.object.isRequired
 };

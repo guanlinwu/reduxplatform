@@ -7,6 +7,7 @@
 
 import React from 'react';
 import NavItem from 'scripts/components/Nav/NavItem';
+import 'scripts/components/Nav/_nav';
 
 export default class Nav extends React.Component {
     constructor(props){

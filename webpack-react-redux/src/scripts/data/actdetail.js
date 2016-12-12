@@ -14,27 +14,21 @@ const actDetail = [
             content : [
                 {
                     link : 'javascript:;',//跳转链接
-                    img  : 'http://gma.alicdn.com/simba/img/TB1_RMJJFXXXXaBXFXXSutbFXXX.jpg_q50.jpg'//图片链接
+                    img  : 'http://pic.maizuo.com/h5PicUpload/e377b87ea71bbbae1ff8abd157b17d3c.jpg'//图片链接
                 },
                 {
                     link : 'javascript:;',
-                    img  : 'http://gma.alicdn.com/simba/img/TB1_RMJJFXXXXaBXFXXSutbFXXX.jpg_q50.jpg'
+                    img  : 'http://pic.maizuo.com/h5PicUpload/549042566cf8e847c59e7b329948128d.jpg'
                 },
                 {
                     link : 'javascript:;',
-                    img  : 'http://gma.alicdn.com/simba/img/TB1_RMJJFXXXXaBXFXXSutbFXXX.jpg_q50.jpg'
+                    img  : 'http://pic.maizuo.com/h5PicUpload/086ac68557972bc4c2a8fd2d28869e8e.jpg'
                 },
                 {
                     link : 'javascript:;',
-                    img  : 'http://gma.alicdn.com/simba/img/TB1_RMJJFXXXXaBXFXXSutbFXXX.jpg_q50.jpg'
+                    img  : 'http://pic.maizuo.com/h5PicUpload/41ff9b55e5f38f0e2487ace4e6eb3435.jpg'
                 }
-            ],
-            //当前走马灯页面
-            activeIndex : 0,
-            //走马灯的dom
-            slideList : {
-                width: 0
-            }
+            ]
         }
     },
     {

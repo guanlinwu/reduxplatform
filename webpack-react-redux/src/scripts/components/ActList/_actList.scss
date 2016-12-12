@@ -1,7 +1,7 @@
 /*
  * 主导航栏
 */
-@import "utils/mixins";
+@import "../../../styles/utils/mixins";
 
 .actList {
     .m-list {
@@ -80,11 +80,11 @@
             }
         }
     }
-}
 
-.u-btn-border {
-    &.e-favor {
-        color: #16a746;
-        border-color: #16a746;
+    .u-btn-border {
+        &.e-favor {
+            color: #16a746;
+            border-color: #16a746;
+        }
     }
 }

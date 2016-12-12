@@ -5,11 +5,11 @@
  */
 'use strict';
 
-import React from 'react';
+import React, {Component, PropTypes} from 'react';
 import ActListImg from 'scripts/components/ActList/ActListImg';
 import ActListDesc from 'scripts/components/ActList/ActListDesc';
 
-export default class ActListItem extends React.Component {
+export default class ActListItem extends Component {
     constructor(props){
         super(props);
     }
@@ -19,8 +19,17 @@ export default class ActListItem extends React.Component {
         return (
             <li className="item">
                 <ActListImg data={imgBox} index={this.props.index} id={id} />
-                <ActListDesc dispatch={this.props.dispatch} data={detailBox} index={this.props.index} />
+                <ActListDesc actlistAction={this.props.actlistAction} data={detailBox} index={this.props.index} />
             </li>
         );
     }
 }
+
+/**
+ * 属性类型
+ */
+ActListItem.propTypes = {
+    index         : PropTypes.number.isRequired,
+    data          : PropTypes.object.isRequired,
+    actlistAction : PropTypes.object.isRequired
+};

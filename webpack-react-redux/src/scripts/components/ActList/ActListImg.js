@@ -5,10 +5,10 @@
  */
 'use strict';
 
-import React from 'react';
+import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
 
-export default class ActListImg extends React.Component {
+export default class ActListImg extends Component {
     constructor(props){
         super(props);
     }
@@ -28,3 +28,14 @@ export default class ActListImg extends React.Component {
         );
     }
 }
+
+/**
+ * 属性类型
+ */
+ActListImg.propTypes = {
+    data : PropTypes.object.isRequired,
+    id   : React.PropTypes.oneOfType([
+        PropTypes.number.isRequired,
+        PropTypes.string.isRequired
+    ])
+};
