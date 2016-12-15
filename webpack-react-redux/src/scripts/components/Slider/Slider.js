@@ -13,11 +13,12 @@ import 'scripts/components/Slider/_slider';
 export default class Slider extends Component {
     constructor(props){
         super(props);
-        let ox, oy, nx, ny;
+        this.ox, this.oy, this.nx, this.ny;
 
         this.swipeEnd   = this.swipeEnd.bind(this);
         this.swipeStart = this.swipeStart.bind(this);
         this.swipeMove  = this.swipeMove.bind(this);
+        this.turn       = this.turn.bind(this);
     }
     componentDidMount() {
         console.log('Sliderprops', this.props);
@@ -68,64 +69,42 @@ export default class Slider extends Component {
         let dx            = this.nx - this.ox,
             dy            = this.ny - this.oy;
 
-        let translateX,
-            activeIndex = this.props.slider.activeIndex;
+        let activeIndex   = this.props.slider.activeIndex;
 
         if(dx*dx+dy*dy < 400) {
-            translateX = -activeIndex * this.props.slider.slideWidth;
-            this.props.sliderAction.updateStyle({
-                WebkitTransform  :'translate3d(' + translateX +'px, 0px, 0px)',
-                WebkitTransition :'-webkit-transform 300ms ease',
-                transform        :'translate3d(' + translateX +'px, 0px, 0px)',
-                transition       :'transform 300ms ease'
-            });
-            this.props.sliderAction.updateBase({
-                activeIndex     : activeIndex,
-                tempactiveindex : this.props.slider.activeIndex,
-                animating       : true
-            });
-            setTimeout(this.props.sliderAction.endAnimating, 300);
+            this.turn(activeIndex, true);
             return;
         }
         if(dx>0) {
             console.log('swipeRight');
             activeIndex = activeIndex > 0 ? activeIndex - 1 : activeIndex;
-            translateX = -activeIndex * this.props.slider.slideWidth;
-            this.props.sliderAction.updateStyle({
-                WebkitTransform  :'translate3d(' + translateX +'px, 0px, 0px)',
-                WebkitTransition :'-webkit-transform 300ms ease',
-                transform        :'translate3d(' + translateX +'px, 0px, 0px)',
-                transition       :'transform 300ms ease'
-            });
-            this.props.sliderAction.updateBase({
-                activeIndex     : activeIndex,
-                tempactiveindex : this.props.slider.activeIndex,
-                animating       : this.props.slider.activeIndex != activeIndex
-            });
-            this.props.slider.activeIndex != activeIndex && setTimeout(this.props.sliderAction.endAnimating, 300);
+            this.turn(activeIndex, this.props.slider.activeIndex != activeIndex);
         }else {
             console.log('swipeLeft');
             activeIndex = activeIndex < this.props.slider.sliderCount - 1 ? activeIndex + 1 : activeIndex;
-            translateX = -activeIndex * this.props.slider.slideWidth;
-            this.props.sliderAction.updateStyle({
-                WebkitTransform  :'translate3d(' + translateX +'px, 0px, 0px)',
-                WebkitTransition :'-webkit-transform 300ms ease',
-                transform        :'translate3d(' + translateX +'px, 0px, 0px)',
-                transition       :'transform 300ms ease'
-            });
-            this.props.sliderAction.updateBase({
-                activeIndex     : activeIndex,
-                tempactiveindex : this.props.slider.activeIndex,
-                animating       : this.props.slider.activeIndex != activeIndex
-            });
-            this.props.slider.activeIndex != activeIndex && setTimeout(this.props.sliderAction.endAnimating, 300);
+            this.turn(activeIndex, this.props.slider.activeIndex != activeIndex);
         }
+    }
+
+    turn(activeIndex, isAnimating) {
+        let translateX = -activeIndex * this.props.slider.slideWidth;
+        this.props.sliderAction.updateStyle({
+            WebkitTransform  :'translate3d(' + translateX +'px, 0px, 0px)',
+            WebkitTransition :'-webkit-transform 200ms ease',
+            transform        :'translate3d(' + translateX +'px, 0px, 0px)',
+            transition       :'transform 200ms ease'
+        });
+        this.props.sliderAction.updateBase({
+            activeIndex     : activeIndex,
+            tempactiveindex : this.props.slider.activeIndex,
+            animating       : isAnimating
+        });
+        isAnimating && setTimeout(this.props.sliderAction.endAnimating, 200);
     }
 
     render() {
         let { activeIndex, trackStyle } = this.props.slider;
         return (
-            // <section className="m-card m-slider" style={this.props.slider.animating ? {border: '2px solid #ccc'} : {}}>
             <section className="m-card m-slider">
                 <ul style={trackStyle} className="m-slider-content" ref="sliderContent" onTouchStart={this.swipeStart} onTouchMove={this.swipeMove} onTouchEnd={this.swipeEnd}>
                     {this.props.content.map((content, index) => <SliderItem key={index} index={index} link={content.link} img={content.img} isActive={activeIndex == index}/>)}
