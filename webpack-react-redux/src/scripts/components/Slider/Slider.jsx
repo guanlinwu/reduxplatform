@@ -13,12 +13,14 @@ import 'scripts/components/Slider/_slider';
 export default class Slider extends Component {
     constructor(props){
         super(props);
-        this.ox, this.oy, this.nx, this.ny;
+        this.ox, this.oy, this.nx, this.ny, this.timer;
 
-        this.swipeEnd   = this.swipeEnd.bind(this);
-        this.swipeStart = this.swipeStart.bind(this);
-        this.swipeMove  = this.swipeMove.bind(this);
-        this.turn       = this.turn.bind(this);
+        this.swipeEnd     = this.swipeEnd.bind(this);
+        this.swipeStart   = this.swipeStart.bind(this);
+        this.swipeMove    = this.swipeMove.bind(this);
+        this.turn         = this.turn.bind(this);
+        this.autoTurn     = this.autoTurn.bind(this);
+        this.stopAutoTurn = this.stopAutoTurn.bind(this);
     }
     componentDidMount() {
         console.log('Sliderprops', this.props);
@@ -30,6 +32,7 @@ export default class Slider extends Component {
             width       : this.refs.sliderContent.offsetWidth * this.props.content.length,
             slideWidth  : this.refs.sliderContent.offsetWidth
         });
+        // this.autoTurn();
     }
 
     swipeStart(e) {
@@ -84,6 +87,23 @@ export default class Slider extends Component {
             activeIndex = activeIndex < this.props.slider.sliderCount - 1 ? activeIndex + 1 : activeIndex;
             this.turn(activeIndex, this.props.slider.activeIndex != activeIndex);
         }
+    }
+
+    autoTurn() {
+        var self = this;
+        console.log(self);
+        self.timer = setInterval(function() {
+            if(!self.props.slider.sliderCount) {
+                return;
+            }
+            let activeIndex = self.props.slider.activeIndex;
+            activeIndex = activeIndex < self.props.slider.sliderCount - 1 ? activeIndex + 1 : activeIndex;
+            self.turn(activeIndex, self.props.slider.activeIndex != activeIndex);
+        }, 4000, self);
+    }
+
+    stopAutoTurn() {
+        clearInterval(this.timer);
     }
 
     turn(activeIndex, isAnimating) {

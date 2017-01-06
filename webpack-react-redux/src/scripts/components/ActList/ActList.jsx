@@ -17,7 +17,10 @@ export default class ActList extends Component {
 
     componentDidMount() {
         console.log('ActList', this.props);
-        this.props.actlistAction.fetchActList();
+        /*
+         如果是刚开始加载，即当前页为0时
+         */
+        this.props.actlist.pageNum == 0 && this.props.actlistAction.fetchActList();
     }
 
     componentWillUnmount() {
@@ -27,7 +30,7 @@ export default class ActList extends Component {
         return (
             <div className="actList">
                 <ul className ="m-list">
-                    {this.props.actlist && this.props.actlist.length > 0 && this.props.actlist.map((actOption, index) => <ActListItem data={actOption} key={index} index={index} actlistAction={this.props.actlistAction}/>)};
+                    {this.props.actlist && this.props.actlist.listArr && this.props.actlist.listArr.length > 0 && this.props.actlist.listArr.map((actOption, index) => <ActListItem data={actOption} key={index} index={index} actlistAction={this.props.actlistAction}/>)}
                 </ul>
             </div>
         );
@@ -43,6 +46,6 @@ ActList.defaultProps = {
  * 属性类型
  */
 ActList.propTypes = {
-    actlist       : PropTypes.array.isRequired,
+    actlist       : PropTypes.object.isRequired,
     actlistAction : PropTypes.object.isRequired
 };

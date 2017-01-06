@@ -150,7 +150,7 @@ console.log(desPath);
         plugins: plugins(config),
         resolve: {
             //省略后缀
-            extensions: ['', '.js', '.jsx', '.scss', '.html', '.png', '.jpg', 'jpeg', '.svg', '.gif', '.json'],
+            extensions: ['', '.jsx', '.js','.scss', '.html', '.png', '.jpg', 'jpeg', '.svg', '.gif', '.json'],
             //别名
             alias: selfAlias
         },

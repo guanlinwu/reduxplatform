@@ -75,3 +75,18 @@ table {
 input::-webkit-input-placeholder{
     color: #ccc;
 }
+
+input,select,textarea{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-appearance:none;
+    border:0;
+    border-radius:0;
+    outline: none;
+    background-color: transparent;
+}
+
+*{box-sizing: border-box;cursor: pointer;}
+
+html,body,a,button,div,em,i,input,li,p,section,span,ul {
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+}

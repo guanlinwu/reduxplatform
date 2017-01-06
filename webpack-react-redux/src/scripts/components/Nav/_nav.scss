@@ -8,6 +8,7 @@
 }
 
 .m-nav{
+    background: #fff;
     &.e-gap-bottom{
         margin-bottom: .2rem;
     }
@@ -33,10 +34,8 @@
             display: block;
             color: #545e6e;
             @include border-width-1px(0,1,0,0,#545e6e);
-        }
-        &.active{
-            background-color: #545e6e;
-            >a{
+
+            &.active{
                 color: #fff;
                 background-color: #545e6e;
             }

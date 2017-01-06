@@ -4,6 +4,7 @@
  */
 const nav = {
     contentArr  : ['首页', '书影音', '广播', '小组', '我的'],
+    routeArr    : ['/', 'none', 'none', 'none', 'user'],
     activeIndex : 0
 };
 

@@ -8,10 +8,8 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actlistActionCreators from 'scripts/actions/actlistActionCreators';
-import * as navActionCreators from 'scripts/actions/navActionCreators';
 
 
-import Nav from 'scripts/components/Nav/Nav';
 import Actlist from 'scripts/components/Actlist/Actlist';
 
 /**
@@ -23,7 +21,6 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-        <Nav nav={this.props.nav} navAction={this.props.navAction}/>
         <Actlist {...this.props} />
       </div>
     );
@@ -34,26 +31,18 @@ class Home extends Component {
  * 属性类型
  */
 Home.propTypes = {
-    nav       : PropTypes.object.isRequired,
-    navAction : PropTypes.object.isRequired
 };
 
 Home.propTypes = {
   children: PropTypes.object.isRequired
 };
 
-function mapStateToProps(state) {
-  return {
-    nav     : state.nav,
-    actlist : state.actlist
-  };
-}
+const mapStateToProps = (state) => ({
+  actlist : state.actlist
+});
 
-function mapDispatchToProps(dispatch) {
-  return {
-    navAction     : bindActionCreators(navActionCreators, dispatch),
-    actlistAction : bindActionCreators(actlistActionCreators, dispatch)
-  };
-}
+const mapDispatchToProps = (dispatch) => ({
+  actlistAction : bindActionCreators(actlistActionCreators, dispatch)
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

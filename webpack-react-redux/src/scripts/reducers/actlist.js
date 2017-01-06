@@ -4,13 +4,14 @@
 'use strict';
 
 export default function actlist(state = {}, action) {
+  console.log(state)
   switch (action.type) {
     /*
      收藏活动
      */
     case 'TOGGLE_FAVOR' :
 
-      let actOptionArr   = state,
+      let actOptionArr   = state.listArr,
         index            = action.item.index,
         actOption        = actOptionArr[index],
         detailBox        = actOption.detailBox;
@@ -26,19 +27,24 @@ export default function actlist(state = {}, action) {
         hasfavor : false
       });
     }
-    return [
+    return {
+      pageNum : state.pageNum,
+      listArr : [
       ...actOptionArr.slice(0, index),
       actOption,
       ...actOptionArr.slice(index+1)
-    ];
+    ]};
     /*
      加载请求到的活动列表
      */
     case 'LOAD_ACTLIST' :
-    return [
-      ...state,
-      ...action.item
-    ];
+    return {
+      pageNum : action.item.pageNum,
+      listArr : [
+        ...state.listArr,
+        ...action.item.listArr
+      ]
+    };
     default:
       return state;
   }

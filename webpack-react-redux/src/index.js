@@ -10,7 +10,7 @@ import 'isomorphic-fetch';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute} from 'react-router';
+import { Router, Route, IndexRoute, Redirect} from 'react-router';
 
 /*
 *  Import Components
@@ -18,6 +18,7 @@ import { Router, Route, IndexRoute} from 'react-router';
 import App from 'scripts/containers/App';
 import Home from 'scripts/containers/Home';
 import ActDetail from 'scripts/containers/ActDetail';
+import User from 'scripts/containers/User';
 
 /* Import CSS */
 import 'styles/index.scss';
@@ -47,8 +48,9 @@ render(
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
-        <Route path="/" component={Home}/>
+        <Route path="/user" component={User}/>
         <Route path="actDetail/:id" component={ActDetail}/>
+        <Redirect from="/none" to="/" />
       </Route>
     </Router>
   </Provider>,

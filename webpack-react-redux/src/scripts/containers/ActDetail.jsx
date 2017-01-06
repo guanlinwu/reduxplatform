@@ -8,10 +8,8 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as sliderActionCreators from 'scripts/actions/sliderActionCreators';
-import * as actlistActionCreators from 'scripts/actions/actlistActionCreators';
 
 import Slider from 'scripts/components/Slider/Slider';
-import Actlist from 'scripts/components/Actlist/Actlist';
 /**
  * 智能组件
  */
@@ -32,7 +30,6 @@ class ActDetail extends Component {
                 </div>
                 <p className="detail-pms">[自由行]直降2000！4日3晚品质游日本经典景点，超级划算，五星级温泉酒店入住</p>
             </section>
-            <Actlist {...this.props} />
         </div>
     );
   }
@@ -48,15 +45,13 @@ ActDetail.propTypes = {
 function mapStateToProps(state) {
   return {
     actdetail : state.actdetail,
-    slider    : state.slider,
-    actlist : state.actlist
+    slider    : state.slider
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    sliderAction : bindActionCreators(sliderActionCreators, dispatch),
-    actlistAction : bindActionCreators(actlistActionCreators, dispatch)
+    sliderAction : bindActionCreators(sliderActionCreators, dispatch)
   };
 }
 

@@ -6,18 +6,18 @@
 'use strict';
 
 import React from 'react';
+import {IndexLink, Link} from 'react-router';
 
 export default class NavItem extends React.Component {
     constructor(props){
         super(props);
-        this.clickRoute = this.clickRoute.bind(this);
-    }
-    clickRoute() {
-        this.props.navAction.goForward({activeIndex: this.props.index});
     }
     render() {
+        let {route, index} = this.props;
         return (
-            <li className={this.props.isActive ? 'item active' : 'item'}><a onClick={this.clickRoute} href="javascript:;">{this.props.content}</a></li>
+            <li className='item'>
+                {index == 0 ? <IndexLink activeClassName="active" href="javascript:;" to={route}>{this.props.content}</IndexLink> : <Link activeClassName="active" href="javascript:;" to={route}>{this.props.content}</Link>}
+            </li>
         );
     }
 }
@@ -35,6 +35,7 @@ NavItem.defaultProps = {
 NavItem.propTypes = {
     index     : React.PropTypes.number.isRequired,
     content   : React.PropTypes.string.isRequired,
+    route     : React.PropTypes.string.isRequired,
     navAction : React.PropTypes.object.isRequired,
     isActive  : React.PropTypes.bool.isRequired
 };

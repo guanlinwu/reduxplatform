@@ -1,5 +1,7 @@
 {
-  "actlist" : [
+  "actlist" : {
+    "pageNum" : 1,
+    "listArr" : [
     {
         "id" : 1,
         "imgBox" : {
@@ -45,7 +47,8 @@
             "price": "88"
         }
     }
-],
+    ]
+  },
   "issues": [
     {
       "id": 101,
