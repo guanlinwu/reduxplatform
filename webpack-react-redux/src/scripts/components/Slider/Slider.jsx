@@ -26,10 +26,10 @@ export default class Slider extends Component {
         console.log('Sliderprops', this.props);
         console.log(this.refs.sliderContent);
         console.log(this.refs.sliderContent.offsetWidth);
-        console.log(this.props.content.length);
+        console.log(this.props.slider.content.length);
         this.props.sliderAction.updateBase({
-            sliderCount : this.props.content.length,
-            width       : this.refs.sliderContent.offsetWidth * this.props.content.length,
+            sliderCount : this.props.slider.content.length,
+            width       : this.refs.sliderContent.offsetWidth * this.props.slider.content.length,
             slideWidth  : this.refs.sliderContent.offsetWidth
         });
         // this.autoTurn();
@@ -127,9 +127,9 @@ export default class Slider extends Component {
         return (
             <section className="m-card m-slider">
                 <ul style={trackStyle} className="m-slider-content" ref="sliderContent" onTouchStart={this.swipeStart} onTouchMove={this.swipeMove} onTouchEnd={this.swipeEnd}>
-                    {this.props.content.map((content, index) => <SliderItem key={index} index={index} link={content.link} img={content.img} isActive={activeIndex == index}/>)}
+                    {this.props.slider.content.map((content, index) => <SliderItem key={index} index={index} link={content.link} img={content.img} isActive={activeIndex == index}/>)}
                 </ul>
-                <SliderTag activeIndex={activeIndex} length={this.props.content.length} />
+                <SliderTag activeIndex={activeIndex} length={this.props.slider.content.length} />
             </section>
         );
     }
@@ -144,7 +144,6 @@ Slider.defaultProps = {
  * 属性类型
  */
 Slider.propTypes = {
-    content : PropTypes.array.isRequired,
     slider : PropTypes.object.isRequired,
     sliderAction : PropTypes.object.isRequired
 };

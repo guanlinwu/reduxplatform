@@ -7,6 +7,7 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import * as actdetailActionCreators from 'scripts/actions/actdetailActionCreators';
 import * as sliderActionCreators from 'scripts/actions/sliderActionCreators';
 
 import Slider from 'scripts/components/Slider/Slider';
@@ -14,14 +15,21 @@ import Slider from 'scripts/components/Slider/Slider';
  * 智能组件
  */
 class ActDetail extends Component {
+  componentDidMount() {
+      console.log('ActDetail', this.props);
+      const {params}            = this.props,
+      id                        = params.id;
+      this.props.actdetailAction.fetchActDetail(id);
+  }
+  componentWillUnmount() {
+    console.log('ActDetail componentWillUnmount');
+    this.props.actdetailAction.unmountActDetail();
+  }
   render() {
-    const {params, actdetail, slider} = this.props,
-    id                        = params.id;
-    let curActdetail          = actdetail[id-1];
-
+    const { slider } = this.props.actdetail;
     return (
         <div className="act-detail">
-            <Slider content={curActdetail.slider.content} slider={slider} sliderAction={this.props.sliderAction}/>
+            {slider != undefined && <Slider slider={slider} sliderAction={this.props.sliderAction}/>}
             <section className="m-card e-border-bottom base-info">
                 <div className="price-box f-clearfix">
                     <span className="pricebox-price"><i className="pricebox-yen">¥</i><em>508</em>起</span>
@@ -36,22 +44,22 @@ class ActDetail extends Component {
 }
 
 ActDetail.propTypes = {
-    params       : PropTypes.object.isRequired,
-    actdetail    : PropTypes.array.isRequired,
-    slider       : PropTypes.object.isRequired,
-    sliderAction : PropTypes.object.isRequired
+    params          : PropTypes.object.isRequired,
+    actdetail       : PropTypes.object.isRequired,
+    actdetailAction : PropTypes.object.isRequired,
+    sliderAction    : PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    actdetail : state.actdetail,
-    slider    : state.slider
+    actdetail : state.actdetail
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    sliderAction : bindActionCreators(sliderActionCreators, dispatch)
+    actdetailAction : bindActionCreators(actdetailActionCreators, dispatch),
+    sliderAction    : bindActionCreators(sliderActionCreators, dispatch)
   };
 }
 

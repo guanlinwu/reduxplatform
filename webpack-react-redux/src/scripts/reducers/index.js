@@ -16,14 +16,12 @@ import { routerReducer } from 'react-router-redux'; // we need this for react-ro
 import nav from 'scripts/reducers/nav';
 import actlist from 'scripts/reducers/actlist';
 import actdetail from 'scripts/reducers/actdetail';
-import slider from 'scripts/reducers/slider';
 
 // Combine all our reducers togeher
 const rootReducer = combineReducers({
     nav,
     actlist,
     actdetail,
-    slider,
     routing: routerReducer
 });
 

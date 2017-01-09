@@ -18,13 +18,11 @@ import rootReducer from 'scripts/reducers/index';
 import nav from 'scripts/data/nav';
 import actlist from 'scripts/data/actlist';
 import actdetail from 'scripts/data/actdetail';
-import slider from 'scripts/data/slider';
 
 const defaultState = {
     nav,
     actlist,
-    actdetail,
-    slider
+    actdetail
 };
 
 const loggerMiddleware = createLogger();

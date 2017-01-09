@@ -11,7 +11,8 @@ let jsonServer  = require('json-server'),
 
 module.exports = function() {
     server.use(middlewares);
-    server.use(router);
+    // server.use(router);
+    server.use('/api', router)
     server.listen(9090, function () {
         console.log('JSON Server is running......');
     });

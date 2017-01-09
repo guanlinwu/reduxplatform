@@ -4,7 +4,6 @@
 'use strict';
 
 export default function actlist(state = {}, action) {
-  console.log(state)
   switch (action.type) {
     /*
      收藏活动

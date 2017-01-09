@@ -161,17 +161,8 @@ console.log(desPath);
                 colors: true
             },
             proxy: {
-                '/issues*': {
-                    target: 'http://localhost:9090',
-                    secure: false
-                },
-                '/total*': {
-                    target: 'http://localhost:9090',
-                    secure: false
-                },
-                '/actlist*': {
-                    target: 'http://localhost:9090',
-                    secure: false
+                '/api/*': {
+                    target: 'http://localhost:9090'
                 }
             }
         }

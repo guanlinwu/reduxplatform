@@ -10,7 +10,7 @@ export function toggleFavor(item){
 //fetch
 export function fetchActList(){
   return dispatch => {
-    fetch('/actlist')
+    fetch('/api/actlist')
       .then(response => response.json())
       .then(json => dispatch(loadActList(json)));
   };
