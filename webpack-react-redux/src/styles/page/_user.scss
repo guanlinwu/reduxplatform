@@ -1,66 +1,18 @@
 .user{
 	height: 100%;
-	background: #f8f8f8;
+	background: #ebebeb;
 	padding-bottom: .1rem;
+	padding-top: 1px;// fixbug
 
-	.head-title {
-		font-size: .64rem;
-		font-weight: 300;
-		text-align: center;
-		line-height: 2rem;
-	}
+	.m-catalog-list {
+		background: #fff;
 
-	.sign-nav, .sign-form {
-	    -webkit-box-sizing: border-box;
-	    box-sizing: border-box;
-	    display: -webkit-box;
-	    display: box;
-	    flex-flow: row wrap;
-	}
-
-	.sign-nav {
-    	margin: 0 auto;
-		width: 4rem;
-	    position: relative;
-	    text-align: center;
-	    overflow: hidden;
-	    color: #ccc;
-
-	    a {
-    	    -webkit-box-flex: 1.0;
-		    box-flex: 1.0;
-		    display: block;
-		    font-size: .36rem;
-		    line-height: 2.5;
-
-		    &.active {
-				color: #000;
-		    }
-	    }
-	}
-
-	.sign-form {
-		width: 80%;
-    	margin: 0 auto;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		> input {
-			margin: .1rem 0;
-			padding: 0 .3rem;
-		    display: block;
-		    width: 100%;
-			font-size: .28rem;
-    		line-height: 2.5;
-    		background: #fff;
-    		border-radius: .04rem;
+		+ .m-catalog-list {
+			margin-top: .3rem;
 		}
-	}
 
-	.u-btn.e-signin, .u-btn.e-signup {
-		margin: .6rem auto;
-		display: block;
-		width: 80%;
+		.iconfont {
+			font-size: .5rem;
+		}
 	}
 }

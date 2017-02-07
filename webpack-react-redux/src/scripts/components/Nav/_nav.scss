@@ -2,6 +2,7 @@
  * 主导航栏
 */
 @import "../../../styles/utils/mixins";
+@import "../../../styles/core/iconfont";
 
 .m-card.nav {
     background: transparent;
@@ -15,8 +16,8 @@
 
     .nav-list{
         @include prefix(box-sizing, border-box);
-        @include border-width-1px(1,1,1,1,#545e6e, .08rem);
-        @include prefix(border-radius, .04rem);
+        // @include border-width-1px(1,1,1,1,#545e6e, .08rem);
+        // @include prefix(border-radius, .04rem);
         display:-webkit-box;
         display: box;
         flex-flow: row wrap;
@@ -28,25 +29,54 @@
         -webkit-box-flex:1.0;
         box-flex:1.0;
         font-size: .28rem;//放大两倍
-        line-height: 2.5;
+        line-height: 1;
 
-        >a{
-            display: block;
+        a {
+            display:-webkit-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: .16rem 0;
+            // display: block;
             color: #545e6e;
-            @include border-width-1px(0,1,0,0,#545e6e);
+            // @include border-width-1px(0,1,0,0,#545e6e);
 
             &.active{
-                color: #fff;
-                background-color: #545e6e;
+                // color: #fff;
+                // background-color: #545e6e;
+
+                .icon-user {
+                    @extend .icon-user-fill;
+                }
+
+                .icon-book {
+                    @extend .icon-book-fill;
+                }
+
+                .icon-book {
+                    @extend .icon-book-fill;
+                }
+
+                .icon-home {
+                    @extend .icon-home-fill;
+                }
+
+
             }
         }
 
-        &:last-child{
-            >a{
-                border-right: none;
-                @include border-width-1px(0,0,0,0,#545e6e);
+        // &:last-child{
+        //     a {
+        //         border-right: none;
+        //         // @include border-width-1px(0,0,0,0,#545e6e);
 
-            }
+        //     }
+        // }
+
+        .iconfont {
+            margin-bottom: .12rem;
+            font-size: .4rem;
         }
     }
 }

@@ -13,10 +13,19 @@ export default class NavItem extends React.Component {
         super(props);
     }
     render() {
-        let {route, index} = this.props;
+        let {route, index, iconClass} = this.props;
         return (
             <li className='item'>
-                {index == 0 ? <IndexLink activeClassName="active" href="javascript:;" to={route}>{this.props.content}</IndexLink> : <Link activeClassName="active" href="javascript:;" to={route}>{this.props.content}</Link>}
+                {index == 0 ?
+                <IndexLink activeClassName="active" href="javascript:;" to={route}>
+                    <i className={"iconfont " + iconClass}></i>
+                    <span>{this.props.content}</span>
+                </IndexLink>
+                :
+                <Link activeClassName="active" href="javascript:;" to={route}>
+                    <i className={"iconfont " + iconClass}></i>
+                    <span>{this.props.content}</span>
+                </Link>}
             </li>
         );
     }

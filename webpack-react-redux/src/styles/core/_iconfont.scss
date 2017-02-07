@@ -1,0 +1,38 @@
+
+@font-face {font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_hepijavqmm7mygb9.eot?t=1486437961376'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_hepijavqmm7mygb9.eot?t=1486437961376#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_hepijavqmm7mygb9.woff?t=1486437961376') format('woff'), /* chrome, firefox */
+  url('//at.alicdn.com/t/font_hepijavqmm7mygb9.ttf?t=1486437961376') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_hepijavqmm7mygb9.svg?t=1486437961376#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-group-fill:before { content: "\e745"; }
+
+.icon-group:before { content: "\e746"; }
+
+.icon-home-fill:before { content: "\e750"; }
+
+.icon-home:before { content: "\e751"; }
+
+.icon-user-fill:before { content: "\e75d"; }
+
+.icon-user:before { content: "\e75e"; }
+
+.icon-book:before { content: "\e78f"; }
+
+.icon-install:before { content: "\e6e7"; }
+
+.icon-follow:before { content: "\e703"; }
+
+.icon-collection:before { content: "\e704"; }
+
+.icon-book-fill:before { content: "\e601"; }

@@ -164,5 +164,16 @@
             "sliderCount"      : 0
         }
     }
-  ]
+  ],
+    "userMenus" : {
+        "collect" : {
+            "num" : 22
+        },
+        "follow" : {
+            "num" : 5
+        },
+        "setting" : {
+            "num" : 0
+        }
+    }
 }

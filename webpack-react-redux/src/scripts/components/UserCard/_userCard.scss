@@ -1,0 +1,18 @@
+.user-card {
+	padding: .16rem 2rem .16rem .30rem;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	background: #fff;
+
+	.img {
+		width: .96rem;
+		height: .96rem;
+	}
+
+	.detail {
+		margin-left: .3rem;
+		font-size: .32rem;
+	}
+}

@@ -15,11 +15,11 @@ export default class Nav extends React.Component {
         console.log('Nav', props);
     }
     render() {
-        let {activeIndex, routeArr} = this.props.nav;
+        let {activeIndex, routeArr, iconClassArr} = this.props.nav;
         return (
             <nav className="m-nav">
                 <ul className="nav-list">
-                    {this.props.nav.contentArr.map((content, index) => <NavItem {...this.props} key={index} index={index} route={routeArr[index]} isActive={activeIndex == index} content={content} />)}
+                    {this.props.nav.contentArr.map((content, index) => <NavItem {...this.props} key={index} index={index} route={routeArr[index]} isActive={activeIndex == index} content={content} iconClass={iconClassArr[index]}/>)}
                 </ul>
             </nav>
         );

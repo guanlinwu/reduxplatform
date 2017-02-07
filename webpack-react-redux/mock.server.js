@@ -11,9 +11,11 @@ let jsonServer  = require('json-server'),
 
 module.exports = function() {
     server.use(middlewares);
-    // server.use(router);
-    server.use('/api', router)
+    server.use(jsonServer.rewriter({
+	  '/api/user/userMenus': '/api/userMenus'
+	}));
+    server.use('/api', router);
     server.listen(9090, function () {
-        console.log('JSON Server is running......');
+        console.log('JSON Server is running......PORT: 9090');
     });
 };

@@ -3,9 +3,10 @@
  * @type {Object}
  */
 const nav = {
-    contentArr  : ['首页', '书影音', '广播', '小组', '我的'],
-    routeArr    : ['/', 'none', 'none', 'none', 'user'],
-    activeIndex : 0
+	contentArr   : ['首页', '书览',  '小组', '我的'],
+	routeArr     : ['/', 'none',  'none', 'user'],
+	iconClassArr : ['icon-home', 'icon-book',  'icon-group', 'icon-user'],
+	activeIndex  : 0
 };
 
 export default nav;

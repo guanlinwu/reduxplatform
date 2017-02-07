@@ -109,7 +109,7 @@ function webpackConfig(config) {
     var desPath     = config.desPath,       /** @type {string} 编译结果路径 */
         selfAlias   = config.alias,         /** @type {Object}配置文件引用路径别名 */
         jsEntries   = config.jsEntries;     /** @type {Object}入口文件路径 */
-console.log(desPath);
+
     return {
         entry: jsEntries,
         output: {
@@ -132,9 +132,17 @@ console.log(desPath);
                     loader: 'babel-loader',
                     exclude: /node_modules/,
                     query: {
-                        presets: ['es2015', 'react']
+                        presets: ['es2015', 'react', 'stage-0']
                     }
                 },
+                // {
+                //     test: /\.jsx?$/,
+                //     loaders: [
+                //         'babel?' + JSON.stringify({presets: ['react', 'es2015', 'stage-0']})
+                //     ],
+                //     exclude: /node_modules/
+                // },
+
                 {
                     test:   /\.(png|gif|jpe?g|svg)$/i,
                     // loaders: [

@@ -7,8 +7,11 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-// import * as navActionCreators from 'scripts/actions/navActionCreators';
+import * as userActionCreators from 'scripts/actions/userActionCreators';
 
+import Mask from 'scripts/components/Mask';
+import UserCard from 'scripts/components/UserCard';
+import UserMenus from 'scripts/components/UserMenus';
 import 'styles/page/_user.scss';
 
 /**
@@ -16,34 +19,20 @@ import 'styles/page/_user.scss';
  */
 class User extends Component {
   componentDidMount() {
+    console.log('user', this.props);
+    this.props.userAction.fetchUserMenus();
   }
   render() {
     return (
       <div className="user">
-        <section>
-          <header >
-            <h1 className="head-title">React</h1>
-          </header>
-          <nav className="sign-nav">
-            <a href="javascript:;">注册</a>
-            <a className="active" href="javascript:;">登录</a>
-          </nav>
-          <div className="f-none">
-            <form className="sign-form">
-              <input required="" type="text" name="fullname" aria-label="姓名" placeholder="姓名"/>
-              <input required="" type="password" name="password" aria-label="密码" placeholder="密码（不少于 6 位）" autoComplete="off"/>
-            </form>
-              <a className="u-btn e-purple e-signin" href="javascript:;">登录</a>
-          </div>
-          <div>
-            <form className="sign-form">
-              <input required="" type="text" name="fullname" aria-label="姓名" placeholder="姓名"/>
-              <input required="" type="text" className="account" name="account" aria-label="账号" placeholder="账号" />
-              <input required="" type="password" name="password" aria-label="密码" placeholder="密码（不少于 6 位）" autoComplete="off"/>
-            </form>
-              <a className="u-btn e-purple e-signup" href="javascript:;">注册</a>
-          </div>
+        <Mask />
+        <section className="m-card e-gap-top">
+          <UserCard name={'化成风'} imgUrl={'http://pic.maizuo.com/usr/default/maizuomoren66.jpg'}/>
         </section>
+        <section className="m-card user-menus e-gap-top">
+          <UserMenus {...this.props.user.userMenus}/>
+          <UserMenus {...this.props.user.userMenus}/>
+         </section>
       </div>
     );
   }
@@ -61,12 +50,13 @@ User.propTypes = {
 
 function mapStateToProps(state) {
   return {
+    user : state.user
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    // navAction     : bindActionCreators(navActionCreators, dispatch)
+    userAction     : bindActionCreators(userActionCreators, dispatch)
   };
 }
 

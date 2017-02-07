@@ -1,0 +1,55 @@
+@import "utils/mixins";
+//catalog是一个title，然后是N项列表内容
+.m-catalog-title {
+    @include prefix(box-sizing, border-box);
+    @include max-width($g-max-width);
+    margin: 0 .30rem;
+    font-size: .28rem;
+    font-weight: normal;
+    line-height: 2;
+    color: #585c64;
+    background-color: #fff;
+    @include border-width-1px(0,0,1,0);
+    //底线是左边右边都不腾出间隙
+    &.e-linegap-full{
+        margin: 0;
+        padding: .18rem .3rem .18rem .3rem;
+    }
+}
+
+.m-catalog-list {
+    color: #000;
+    //默认列表内容的线是左边，右边腾出相同间隙
+    >li, >div {
+        position: relative;
+        margin: 0 .30rem;
+        padding: .16rem 2rem .16rem 0;
+        font-size: .32rem;
+        line-height: 2;
+        @include border-width-1px(0,0,1,0);
+
+        &:last-child {
+            @include border-width-1px(0,0,0,0);
+        }
+        .item-title {
+            font-size: .32rem;
+            margin-left: .8rem;
+        }
+
+        input{
+            font-size: .32rem;
+            margin-left: 1.55rem;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            display: none;
+        }
+    }
+    //列表内容的底线是左边腾出间隙，右边不腾出间隙
+    &.e-linegap-right{
+        >li, >div {
+            margin: 0 0 0 .3rem;
+            padding: .2rem 2rem .2rem 0;
+        }
+    }
+}

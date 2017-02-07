@@ -12,9 +12,12 @@ import Nav from 'scripts/components/Nav/Nav';
 
 class App extends Component {
   render() {
+    let {pathname} = this.props.location;
     return (
       <div className="g-wrapper">
-        <Nav nav={this.props.nav} navAction={this.props.navAction}/>
+        <div className="f-fix e-bottom e-zindex-loading">
+          {!/actdetail/i.test(pathname) && <Nav nav={this.props.nav} navAction={this.props.navAction}/>}
+        </div>
         { React.cloneElement(this.props.children, this.props) }
       </div>
     );
