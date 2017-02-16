@@ -7,6 +7,7 @@
 .g-wrapper{
     @include max-width($g-max-width);
     position: relative;
+    padding-bottom: 1.4rem;
 }
 /************功能样式f-*************/
 //清楚浮动与浮动

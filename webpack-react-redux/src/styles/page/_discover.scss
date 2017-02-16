@@ -1,0 +1,49 @@
+/*
+ * 书架页
+*/
+// @import "utils/mixins";
+
+.discover{
+
+}
+
+.m-librarys{
+	width: 100%;
+
+	.library{
+		display: flex;
+		display:-webkit-flex;
+		flex-flow: row wrap;
+		// justify-content:space-around;
+		align-content: flex-start;
+	    width: 100%;
+	    padding: 0 .15rem;
+
+		.item{
+			flex: 0 0 2.1rem;
+			margin: .3rem .15rem 0;
+			height: 3.5rem;
+			text-align: center;
+			background-color: #fff;
+			// @include border-width-1px(1,1,1,1,#545e6e);
+
+			.title{
+				line-height: .96rem;
+			}
+
+			.img-box{
+				height: 0;
+			    padding: 0 .16rem 60%;
+    			overflow: hidden;
+
+			}
+
+			.subscribe{
+				margin-top: .4rem;
+			    height: .48rem;
+			    font-size: .24rem;
+			    line-height: .48rem;
+			}
+		}
+	}
+}

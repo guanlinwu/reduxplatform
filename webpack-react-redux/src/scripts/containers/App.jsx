@@ -7,10 +7,14 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as navActionCreators from 'scripts/actions/navActionCreators';
+import Rem from 'scripts/utils/libraries/Rem';
 
 import Nav from 'scripts/components/Nav/Nav';
 
 class App extends Component {
+  componentDidMount() {
+    const rem = new Rem();
+  }
   render() {
     let {pathname} = this.props.location;
     return (

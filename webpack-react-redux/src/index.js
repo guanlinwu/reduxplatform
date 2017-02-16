@@ -19,6 +19,7 @@ import App from 'scripts/containers/App';
 import Home from 'scripts/containers/Home';
 import ActDetail from 'scripts/containers/ActDetail';
 import User from 'scripts/containers/User';
+import Discover from 'scripts/containers/Discover';
 
 /* Import CSS */
 import 'styles/index.scss';
@@ -50,6 +51,7 @@ render(
         <IndexRoute component={Home} />
         <Route path="/user" component={User}/>
         <Route path="actDetail/:id" component={ActDetail}/>
+        <Route path="/discover" component={Discover}/>
         <Redirect from="/none" to="/" />
       </Route>
     </Router>

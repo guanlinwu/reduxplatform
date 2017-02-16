@@ -27,7 +27,7 @@ class User extends Component {
       <div className="user">
         <Mask />
         <section className="m-card e-gap-top">
-          <UserCard name={'化成风'} imgUrl={'http://pic.maizuo.com/usr/default/maizuomoren66.jpg'}/>
+          <UserCard name={'化成风'} imgUrl={'https://qnmob2.doubanio.com/view/movie_poster_cover/lpst/public/p2388938156.jpg'}/>
         </section>
         <section className="m-card user-menus e-gap-top">
           <UserMenus {...this.props.user.userMenus}/>

@@ -33,8 +33,9 @@ let fs          = require('fs'),
         'scripts'   : path.resolve(__dirname, 'src/scripts'),
         'styles'    : path.resolve(__dirname, 'src/styles'),
         'panels'    : path.resolve(__dirname, 'src/panels'),
+        'utils'     : path.resolve(__dirname, 'src/utils'),
         // 'jquery'    : path.join(node_modules, 'jquery/dist/jquery'),
-        'zepto'     : path.join(__dirname, 'src/scripts/libraries/zepto'),
+        'zepto'     : path.join(__dirname, 'src/scripts/utils/libraries/zepto'),
         'react'     : path.join(node_modules, 'react/react'),
         'react-dom' : path.join(node_modules, 'react-dom/dist/react-dom')
         // 'lodash'    : path.join(node_modules, 'lodash/lodash')

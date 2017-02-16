@@ -10,6 +10,7 @@
 
 .m-nav{
     background: #fff;
+    @include border-width-1px(1,0,0,0,#545e6e);
     &.e-gap-bottom{
         margin-bottom: .2rem;
     }
