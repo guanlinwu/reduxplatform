@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     let {pathname} = this.props.location;
     return (
-      <div className="g-wrapper">
+      <div>
         <div className="f-fix e-bottom e-zindex-loading">
           {!/actdetail/i.test(pathname) && <Nav nav={this.props.nav} navAction={this.props.navAction}/>}
         </div>

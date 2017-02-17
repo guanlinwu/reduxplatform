@@ -17,6 +17,7 @@ import nav from 'scripts/reducers/nav';
 import actlist from 'scripts/reducers/actlist';
 import actdetail from 'scripts/reducers/actdetail';
 import user from 'scripts/reducers/user';
+import discover from 'scripts/reducers/discover';
 
 // Combine all our reducers togeher
 const rootReducer = combineReducers({
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
     actlist,
     actdetail,
     user,
+    discover,
     routing: routerReducer
 });
 

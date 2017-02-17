@@ -7,90 +7,40 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import * as discoverActionCreators from 'scripts/actions/discoverActionCreators';
+
+import Categories from 'scripts/components/Categories';
 
 import 'styles/page/_discover.scss';
 
+const categoriesArr   = ['subscribe', 'recommend', 'entertainment'];
+const categoriesArrCh = ['订阅', '推荐', '娱乐'];
 /**
  * 智能组件
  */
 class Discover extends Component {
   componentDidMount() {
     console.log('Discover', this.props);
+    let {categories}  = this.props.discover;
+    console.log(categories);
+    if(categories == undefined) {
+      for(var item in categoriesArr) {
+        this.props.discoverAction.fetchCategories(categoriesArr[item]);
+      }
+    }
   }
   render() {
+    let {categories}  = this.props.discover,
+    categoryCnt       = [],
+    {toggleSubscribe} = this.props.discoverAction;
+    for(var key in categories){
+      if(categories[key].length > 0) {
+        categoryCnt.push(<Categories categories={categories[key]} key={key} belongTo={key} title={categoriesArrCh[categoryCnt.length]} toggleSubscribe={toggleSubscribe}/>);
+      }
+    }
     return (
       <div className="discover">
-        <section className="m-librarys">
-          <ul className="library">
-            <li className="item">
-              <h3 className="title">摄影</h3>
-              <div className="img-box">
-                <img src="https://img3.doubanio.com/lpic/s29259503.jpg" alt=""/>
-              </div>
-              <a className="u-btn-border e-lightgray subscribe" href="javascript:;">取消订阅</a>
-            </li>
-            <li className="item">
-              <h3 className="title">摄影</h3>
-              <div className="img-box">
-                <img src="https://qnmob2.doubanio.com/img/files/file-1487071049.jpg" alt=""/>
-              </div>
-              <a className="u-btn-border e-lightgray subscribe" href="javascript:;">取消订阅</a>
-            </li>
-            <li className="item">
-              <h3 className="title">摄影</h3>
-              <div className="img-box">
-                <img src="https://qnmob2.doubanio.com/view/movie_poster_cover/lpst/public/p2388938156.jpg" alt=""/>
-              </div>
-              <a className="u-btn-border e-lightgray subscribe" href="javascript:;">取消订阅</a>
-            </li>
-            <li className="item">
-              <h3 className="title">摄影</h3>
-              <div className="img-box">
-                <img src="https://img3.doubanio.com/lpic/s29259503.jpg" alt=""/>
-              </div>
-              <a className="u-btn-border e-lightgray subscribe" href="javascript:;">取消订阅</a>
-            </li>
-            <li className="item">
-              <h3 className="title">摄影</h3>
-              <div className="img-box">
-                <img src="https://qnmob2.doubanio.com/img/files/file-1487071049.jpg" alt=""/>
-              </div>
-              <a className="u-btn-border e-lightgray subscribe" href="javascript:;">取消订阅</a>
-            </li>
-            <li className="item">
-              <h3 className="title">摄影</h3>
-              <div className="img-box">
-                <img src="https://qnmob2.doubanio.com/view/movie_poster_cover/lpst/public/p2388938156.jpg" alt=""/>
-              </div>
-              <a className="u-btn-border e-lightgray subscribe" href="javascript:;">取消订阅</a>
-            </li>
-            <li className="item"></li>
-            <li className="item"></li>
-            <li className="item"></li>
-            <li className="item">
-              <h3 className="title">摄影</h3>
-              <div className="img-box">
-                <img src="https://img3.doubanio.com/lpic/s29259503.jpg" alt=""/>
-              </div>
-              <a className="u-btn-border e-lightgray subscribe" href="javascript:;">取消订阅</a>
-            </li>
-            <li className="item">
-              <h3 className="title">摄影</h3>
-              <div className="img-box">
-                <img src="https://qnmob2.doubanio.com/img/files/file-1487071049.jpg" alt=""/>
-              </div>
-              <a className="u-btn-border e-lightgray subscribe" href="javascript:;">取消订阅</a>
-            </li>
-            <li className="item">
-              <h3 className="title">摄影</h3>
-              <div className="img-box">
-                <img src="https://qnmob2.doubanio.com/view/movie_poster_cover/lpst/public/p2388938156.jpg" alt=""/>
-              </div>
-              <a className="u-btn-border e-lightgray subscribe" href="javascript:;">取消订阅</a>
-            </li>
-            <li className="item"></li>
-          </ul>
-        </section>
+        {categoryCnt}
       </div>
     );
   }
@@ -103,18 +53,20 @@ Discover.propTypes = {
 };
 
 Discover.propTypes = {
-  children: PropTypes.object.isRequired
+  children       : PropTypes.object.isRequired,
+  discover       : React.PropTypes.object.isRequired,
+  discoverAction : React.PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    // discover : state.discover
+    discover : state.discover
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    // discoverAction     : bindActionCreators(discoverActionCreators, dispatch)
+    discoverAction     : bindActionCreators(discoverActionCreators, dispatch)
   };
 }
 

@@ -11,13 +11,7 @@ export default function actdetail(state = {}, action) {
     	case 'UNMOUNT_ACTDETAIL' :
 			return {};
 	    case 'UPDATE_STYLE' :
-	    	return Object.assign({}, state, {
-	    		slider : sliderReducer(state.slider, action)
-	    	});
 	    case 'UPDATE_BASE' :
-          	return Object.assign({}, state, {
-	    		slider : sliderReducer(state.slider, action)
-	    	});
 	    case 'END_ANIMATING' :
 	        return Object.assign({}, state, {
 	    		slider : sliderReducer(state.slider, action)

@@ -3,7 +3,6 @@
  */
 //fetch
 export function fetchActDetail(id){
-  console.log(`/actdetail/${id}`)
   return dispatch => {
     fetch(`/api/actdetail/${id}`)
       .then(response => response.json())

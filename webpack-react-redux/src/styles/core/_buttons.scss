@@ -2,7 +2,7 @@
 @import "utils/prefixer";
 @import "utils/mixins";
 
-   
+
 /*
 * linso.wu
 */
@@ -60,42 +60,42 @@
     font-size: .28rem;
     text-align: center;
     line-height: .72rem;
-    border: 1px solid #000;
+    @include border-width-1px(1,1,1,1,#000, .04rem);
 
     &.e-purple{
-        border-color: $g-xycolor;
+        @include border-width-1px(1,1,1,1,$g-xycolor, .04rem);
         color: $g-xycolor;
 
         &:active{
-            border-color: $g-btnborder-purle-active;
+            @include border-width-1px(1,1,1,1,$g-btnborder-purle-active, .04rem);
             color: $g-btnborder-purle-active;
         }
     }
 
     &.e-gray{
-        border-color: $g-btnborder-gray;
+        @include border-width-1px(1,1,1,1,$g-btnborder-gray, .04rem);
         color: $g-btnborder-gray;
 
         &:active{
-            border-color: $g-btnborder-gray-active;
+            @include border-width-1px(1,1,1,1,$g-btnborder-gray-active, .04rem);
             color: $g-btnborder-gray-active;
         }
     }
 
     &.e-lightgray{
-        border-color: $g-btnborder-lightgray;
+        @include border-width-1px(1,1,1,1,$g-btnborder-lightgray, .04rem);
         color: $g-btnborder-lightgray;
 
         &:not(.e-no-active){
             &:active{
-                border-color: $g-btnborder-lightgray-active;
+                @include border-width-1px(1,1,1,1,$g-btnborder-lightgray-active, .04rem);
                 color: $g-btnborder-lightgray-active;
             }
         }
     }
 
     &.e-disabled{
-        border-color: $g-btnborder-disabled;
+        @include border-width-1px(1,1,1,1,$g-btnborder-disabled, .04rem);
         color: $g-btnborder-disabled;
     }
 

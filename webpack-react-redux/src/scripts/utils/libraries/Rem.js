@@ -28,8 +28,8 @@ class REM {
 	}
 
 	setSize() {
-		let w      = $(window).width();
-		this.rempx = w/750*100;
+		let w      = window.innerWidth;
+		this.rempx = w/750*100 >= 100 ? 100 : w/750*100;
 		document.getElementsByTagName('html')[0].style.fontSize = this.rempx + 'px';
 	}
 

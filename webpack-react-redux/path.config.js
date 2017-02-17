@@ -22,7 +22,7 @@ let fs          = require('fs'),
     /** @type {string} 应用资源路径入口 */
     jsEntries   = {
         index: ['./src/index'],
-        vendor: ['zepto', 'react', 'react-dom']
+        vendor: ['react', 'react-dom']
         // vendors : ['zepto']//引进公共lib的js
         //支持数组形式，将加载数组中的所有模块，但以最后一个模块作为输出
         // page2: ["./entry1", "./entry2"]

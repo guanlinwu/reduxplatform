@@ -175,5 +175,83 @@
         "setting" : {
             "num" : 0
         }
-    }
+    },
+        "subscribe":[
+            {
+                "title" : "摄影",
+                "imgUrl" : "https://qnmob2.doubanio.com/img/files/file-1487071049.jpg",
+                "isSubscribe" : true,
+                "from" : "recommend"
+            },
+            {
+                "title" : "跳舞",
+                "imgUrl" : "https://qnmob2.doubanio.com/img/files/file-1487071049.jpg",
+                "isSubscribe" : true,
+                "from" : "recommend"
+            },
+            {
+                "title" : "什么鬼",
+                "imgUrl" : "https://qnmob2.doubanio.com/img/files/file-1487071049.jpg",
+                "isSubscribe" : true,
+                "from" : "recommend"
+            },
+            {
+                "title" : "什么鬼合",
+                "imgUrl" : "https://qnmob2.doubanio.com/img/files/file-1487071049.jpg",
+                "isSubscribe" : true,
+                "from" : "recommend"
+            }
+        ],
+        "recommend":[
+            {
+                "title" : "推荐1",
+                "imgUrl" : "https://qnmob2.doubanio.com/img/files/file-1487071049.jpg",
+                "isSubscribe" : false,
+                "from" : "recommend"
+            },
+            {
+                "title" : "推荐2",
+                "imgUrl" : "https://qnmob2.doubanio.com/img/files/file-1487071049.jpg",
+                "isSubscribe" : false,
+                "from" : "recommend"
+            },
+            {
+                "title" : "推荐3",
+                "imgUrl" : "https://qnmob2.doubanio.com/img/files/file-1487071049.jpg",
+                "isSubscribe" : false,
+                "from" : "recommend"
+            },
+            {
+                "title" : "推荐4",
+                "imgUrl" : "https://qnmob2.doubanio.com/img/files/file-1487071049.jpg",
+                "isSubscribe" : false,
+                "from" : "recommend"
+            }
+        ],
+        "entertainment":[
+            {
+                "title" : "娱乐1",
+                "imgUrl" : "https://qnmob2.doubanio.com/img/files/file-1487071049.jpg",
+                "isSubscribe" : false,
+                "from" : "entertainment"
+            },
+            {
+                "title" : "娱乐2",
+                "imgUrl" : "https://qnmob2.doubanio.com/img/files/file-1487071049.jpg",
+                "isSubscribe" : false,
+                "from" : "entertainment"
+            },
+            {
+                "title" : "娱乐3",
+                "imgUrl" : "https://qnmob2.doubanio.com/img/files/file-1487071049.jpg",
+                "isSubscribe" : false,
+                "from" : "entertainment"
+            },
+            {
+                "title" : "娱乐4",
+                "imgUrl" : "https://qnmob2.doubanio.com/img/files/file-1487071049.jpg",
+                "isSubscribe" : false,
+                "from" : "entertainment"
+            }
+        ]
 }

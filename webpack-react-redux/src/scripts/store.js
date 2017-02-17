@@ -19,12 +19,14 @@ import nav from 'scripts/data/nav';
 import actlist from 'scripts/data/actlist';
 import actdetail from 'scripts/data/actdetail';
 import user from 'scripts/data/user';
+import discover from 'scripts/data/discover';
 
 const defaultState = {
     nav,
     actlist,
     actdetail,
-    user
+    user,
+    discover
 };
 
 const loggerMiddleware = createLogger();
