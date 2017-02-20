@@ -50,7 +50,7 @@ render(
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
         <Route path="/user" component={User}/>
-        <Route path="actDetail/:id" component={ActDetail}/>
+        <Route path="/actDetail/:id" component={ActDetail}/>
         <Route path="/discover" component={Discover}/>
         <Redirect from="/none" to="/" />
       </Route>
