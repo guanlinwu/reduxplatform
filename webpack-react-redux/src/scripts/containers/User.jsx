@@ -31,7 +31,6 @@ class User extends Component {
         </section>
         <section className="m-card user-menus e-gap-top">
           <UserMenus {...this.props.user.userMenus}/>
-          <UserMenus {...this.props.user.userMenus}/>
          </section>
       </div>
     );

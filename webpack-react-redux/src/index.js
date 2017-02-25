@@ -13,7 +13,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, Redirect} from 'react-router';
 
 /*
-*  Import Components
+*  Import Contaniers
 */
 import App from 'scripts/containers/App';
 import Home from 'scripts/containers/Home';

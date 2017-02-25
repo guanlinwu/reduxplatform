@@ -9,11 +9,15 @@ import { bindActionCreators } from 'redux';
 import * as navActionCreators from 'scripts/actions/navActionCreators';
 import Rem from 'scripts/utils/libraries/Rem';
 
+/*
+*  Import Components
+*/
+import ToTop from 'scripts/components/ToTop';
 import Nav from 'scripts/components/Nav/Nav';
 
 class App extends Component {
   componentDidMount() {
-    const rem = new Rem();
+    new Rem();
   }
   render() {
     let {pathname} = this.props.location;
@@ -23,6 +27,7 @@ class App extends Component {
           {!/actdetail/i.test(pathname) && <Nav nav={this.props.nav} navAction={this.props.navAction}/>}
         </div>
         { React.cloneElement(this.props.children, this.props) }
+        <ToTop />
       </div>
     );
   }

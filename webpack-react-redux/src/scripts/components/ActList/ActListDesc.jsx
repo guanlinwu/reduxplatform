@@ -18,8 +18,9 @@ export default class ActListDesc extends Component {
     }
 
     render() {
-        let data        = this.props.data,
-            favorClass  = 'u-btn-border e-lightgray e-no-active ' + (data.hasfavor ? 'e-favor' : '');
+        let {data}        = this.props,
+            {category}    = data,
+            favorClass    = 'u-btn-border e-lightgray e-no-active ' + (data.hasfavor ? 'e-favor' : '');
 
         return (
             <div className="detail">
@@ -30,6 +31,10 @@ export default class ActListDesc extends Component {
                     <span className="u-btn-border e-lightgray">{data.time}</span>
                     <a className={favorClass} onClick={this.handleFavor}>{data.favor}人收藏</a>
                     <span className="u-btn-border e-lightgray f-fr">¥{data.price}</span>
+                </p>
+                <p className="subscribe">
+                    <span>{category}</span>
+                    <span className="time f-fr">20分钟前</span>
                 </p>
             </div>
         );

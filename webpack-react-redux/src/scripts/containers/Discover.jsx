@@ -33,10 +33,12 @@ class Discover extends Component {
     let {categories}  = this.props.discover,
     categoryCnt       = [],
     {toggleSubscribe} = this.props.discoverAction;
+    let count = 0;//记录categories的真实有效位置
     for(var key in categories){
       if(categories[key].length > 0) {
-        categoryCnt.push(<Categories categories={categories[key]} key={key} belongTo={key} title={categoriesArrCh[categoryCnt.length]} toggleSubscribe={toggleSubscribe}/>);
+        categoryCnt.push(<Categories categories={categories[key]} key={key} belongTo={key} title={categoriesArrCh[count]} toggleSubscribe={toggleSubscribe}/>);
       }
+      count++;
     }
     return (
       <div className="discover">

@@ -14,7 +14,8 @@
             "time": "6月9日 14:00",
             "favor": 200,
             "hasfavor": true,
-            "price": 38
+            "price": 38,
+            "category": "科技"
         }
     },
     {
@@ -29,7 +30,8 @@
             "time": "6月9日 15:00",
             "favor": 150,
             "hasfavor": false,
-            "price": 500
+            "price": 500,
+            "category": "娱乐"
         }
     },
     {
@@ -44,7 +46,8 @@
             "time": "6月20日 13:00",
             "favor": 54,
             "hasfavor": true,
-            "price": "88"
+            "price": "88",
+            "category": "旅游"
         }
     }
     ]

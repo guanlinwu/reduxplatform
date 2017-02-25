@@ -75,9 +75,27 @@
                 }
             }
 
-            a{
-                cursor: pointer;
+            .subscribe{
+                margin-top: .4rem;
+
+                span {
+                    display: inline-block;
+                    padding: .02rem .06rem;
+                    height: .42rem;
+                    color: #fff;
+                    font-size: .28rem;
+                    line-height: .42rem;
+                    background: #585c64;
+                    border-radius: .04rem;
+                }
+
+                .time{
+                    color: #545e6e;
+                    background: transparent;
+                }
             }
+
+
         }
     }
 
