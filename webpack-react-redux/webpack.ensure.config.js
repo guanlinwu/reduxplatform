@@ -50,31 +50,11 @@ function plugins(config) {
         new webpack.optimize.DedupePlugin(),
         //提取独立样式css
         // new ExtractTextPlugin('[name]/styles/index.css'),
-        new ExtractTextPlugin('styles/index.css'),
+        new ExtractTextPlugin('styles/index.css', { allChunks: true }),
         //热模块
         new webpack.HotModuleReplacementPlugin()
     ]);
-    // }
-    /**
-     * release模式
-     */
-    // else if (environment == 'release') {
-    //     plugins = plugins.concat([
-    //         new webpack.optimize.DedupePlugin(),
-    //         new webpack.optimize.OccurenceOrderPlugin(),
-    //         //提取独立样式css
-    //         new ExtractTextPlugin(appPath + '/[name]/styles/index-[chunkhash:8].css'),
-    //         //压缩代码
-    //         new webpack.optimize.UglifyJsPlugin({
-    //             compress: {
-    //                 warnings: false
-    //             },
-    //             mangle: {
-    //                 except: ['$', 'jQuery', 'zepto', 'react', 'react-dom']
-    //             }
-    //         })
-    //     ]);
-    // }
+
     /**
      * 配置html模板文件
      * @function
@@ -137,14 +117,6 @@ function webpackConfig(config) {
                         presets: ['es2015', 'react', 'stage-0']
                     }
                 },
-                // {
-                //     test: /\.jsx?$/,
-                //     loaders: [
-                //         'babel?' + JSON.stringify({presets: ['react', 'es2015', 'stage-0']})
-                //     ],
-                //     exclude: /node_modules/
-                // },
-
                 {
                     test:   /\.(png|gif|jpe?g|svg)$/i,
                     // loaders: [
@@ -157,6 +129,9 @@ function webpackConfig(config) {
                 }
             ]
         },
+        // postcss: function () {
+        //     return [require('autoprefixer')];
+        // },
         plugins: plugins(config),
         resolve: {
             //省略后缀

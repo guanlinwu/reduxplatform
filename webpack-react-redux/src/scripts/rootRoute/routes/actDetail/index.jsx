@@ -1,11 +1,11 @@
-import ActDetail from 'scripts/containers/ActDetail';
+// import ActDetail from 'scripts/containers/ActDetail';
 
 export default {
-  path: 'actDetail',
+  path: '/actDetail/:id',
 
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, require(ActDetail))
-    }, 'ActDetail')
+      cb(null, require('scripts/containers/ActDetail').default);
+    }, 'ActDetail');
   }
-}
+};

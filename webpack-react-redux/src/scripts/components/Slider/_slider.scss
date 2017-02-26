@@ -47,9 +47,10 @@
 
         em {
             display: inline-block;
-            width: .10rem;
-            height: .10rem;
+            width: .12rem;
+            height: .12rem;
             margin: 0 .1rem;
+            vertical-align: middle;
             font-style: normal;
             font-family: sans-serif;
             text-indent: -9999rem;
@@ -60,8 +61,8 @@
 
             &.active {
                 // border: .02rem solid #455164;
-                width: .12rem;
-                height: .12rem;
+                width: .14rem;
+                height: .14rem;
                 background-color: #ffffff;
             }
         }

@@ -44,7 +44,9 @@ User.propTypes = {
 };
 
 User.propTypes = {
-  children: PropTypes.object.isRequired
+  children   : PropTypes.object.isRequired,
+  user       : PropTypes.object.isRequired,
+  userAction : PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {

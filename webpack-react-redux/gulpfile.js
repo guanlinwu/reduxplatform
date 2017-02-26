@@ -7,7 +7,8 @@ var gulp             = require('gulp'),
     mockServer       = require('./mock.server.js'),
 
     /** @type {Object} webpack配置 */
-    WebpackConfig    = require('./webpack.config'),
+    // WebpackConfig    = require('./webpack.config'),
+    WebpackConfig    = require('./webpack.ensure.config'),
     /** @type {Object} 路径配置 */
     pathConfig       = require('./path.config'),
     /** @type {string} 端口 */

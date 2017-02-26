@@ -21,7 +21,7 @@ export default class SliderTag extends React.Component {
             emHtml.push(<em className={activeIndex==index ? 'active' : ''} key={index}>{index}</em>);
         }
         return (
-            <div className="m-slider-control f-clearfix">
+            <div className="m-slider-control">
                 {emHtml}
             </div>
         );
