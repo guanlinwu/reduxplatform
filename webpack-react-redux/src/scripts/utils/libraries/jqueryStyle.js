@@ -7,7 +7,7 @@
  * 大大优化了性能
  */
 
-'use strict';
+
 
 /**
  * @external $

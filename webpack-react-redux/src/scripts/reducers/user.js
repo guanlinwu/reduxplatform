@@ -1,11 +1,11 @@
 /**
  * user reducers
  */
-'use strict';
+import * as CONSTANTS from 'constants';
 
 export default function user(state = {}, action) {
   switch (action.type) {
-  	case 'LOAD_USERMENUS' :
+  	case CONSTANTS.LOAD_USERMENUS :
 		return {...state, userMenus :
   			{
 				collect : {

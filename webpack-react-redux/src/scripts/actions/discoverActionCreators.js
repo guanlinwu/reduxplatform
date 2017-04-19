@@ -2,11 +2,13 @@
  * actDetail
  */
 //fetch
+import * as CONSTANTS from 'constants';
+import * as discoverModel from '../utils/model/discover';
+
 export function fetchCategories(category){
-  console.log(category)
-  if(category == undefined) {return;}
+  if(category === undefined) {return;}
   return dispatch => {
-    fetch(`/api/discover/categories/${category}`)
+    discoverModel.categories(category)
       .then(response => response.json())
       .then(json => dispatch(loadCategories(json, category)));
   };
@@ -14,7 +16,7 @@ export function fetchCategories(category){
 
 export function loadCategories(item, category){
   return {
-      type : 'LOAD_CATEGORIES',
+      type : CONSTANTS.LOAD_CATEGORIES,
       item,
       category
   };
@@ -22,7 +24,7 @@ export function loadCategories(item, category){
 
 export function toggleSubscribe(item){
   return {
-      type : 'TOGGLE_SUBCRIBE',
+      type : CONSTANTS.TOGGLE_SUBCRIBE,
       item
   };
 }

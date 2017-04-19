@@ -2,9 +2,10 @@
  * 主页容器
  */
 
-'use strict';
 
-import React, { Component, PropTypes } from 'react';
+
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as userActionCreators from 'scripts/actions/userActionCreators';

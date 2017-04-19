@@ -1,9 +1,10 @@
 /**
  * 总容器
  */
-'use strict';
 
-import React, { Component, PropTypes } from 'react';
+
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as navActionCreators from 'scripts/actions/navActionCreators';
@@ -26,7 +27,7 @@ class App extends Component {
         <div className="f-fix e-bottom e-zindex-loading">
           {!/actdetail/i.test(pathname) && <Nav nav={this.props.nav} navAction={this.props.navAction}/>}
         </div>
-        { React.cloneElement(this.props.children, this.props) }
+        {!!this.props.children && React.cloneElement(this.props.children, this.props) }
         <ToTop />
       </div>
     );
@@ -34,7 +35,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  children: PropTypes.object.isRequired
+  children: PropTypes.object
 };
 
 const mapStateToProps = (state) => ({

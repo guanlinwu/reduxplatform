@@ -1,13 +1,13 @@
 /**
  * discover reducers
  */
-'use strict';
+import * as CONSTANTS from 'constants';
 
 const SUBCRIBE= 'subscribe';
 
 export default function discover(state = {}, action) {
   switch (action.type) {
-	case 'LOAD_CATEGORIES' :
+	case CONSTANTS.LOAD_CATEGORIES:
 		let categories = {...state.categories};
 		categories[action.category] = [
 			...action.item
@@ -15,7 +15,7 @@ export default function discover(state = {}, action) {
 		return {
 			categories : categories
 		};
-	case 'TOGGLE_SUBCRIBE' :
+	case CONSTANTS.TOGGLE_SUBCRIBE:
 			let {index, belongTo}   = action.item,//belongTo: 属于类别. index: 该数组的索引
 			categoryArr   = state.categories[belongTo],
 			category      = categoryArr[index],

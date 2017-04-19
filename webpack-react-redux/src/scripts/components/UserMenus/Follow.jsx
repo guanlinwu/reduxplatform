@@ -3,22 +3,19 @@
  * @module scripts/components/UserMenus/Follow
  * @requires react
  */
-'use strict';
+
 
 import React from 'react';
 import MenuItem from 'scripts/components/UserMenus/MenuItem';
 
-export default class Follow extends React.Component {
-    constructor(props){
-        super(props);
-        console.log('Follow', props);
-    }
-    render() {
-      return (
-        <MenuItem {...this.props} />
-      );
-    }
+const Follow = (props)=> {
+    console.log('Follow', props);
+    return (
+        <MenuItem {...props} />
+    );
 }
+export default Follow;
+
 /**
  * 默认属性
  */

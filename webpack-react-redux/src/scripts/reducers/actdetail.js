@@ -1,18 +1,18 @@
 /**
  * actlist reducers
  */
-'use strict';
+import * as CONSTANTS from 'constants';
 import sliderReducer from 'scripts/reducers/slider';
 
 export default function actdetail(state = {}, action) {
     switch (action.type) {
-    	case 'LOAD_ACTDETAIL' :
+    	case CONSTANTS.LOAD_ACTDETAIL :
 			return Object.assign({}, state, action.item);
-    	case 'UNMOUNT_ACTDETAIL' :
+    	case CONSTANTS.UNMOUNT_ACTDETAIL :
 			return {};
-	    case 'UPDATE_STYLE' :
-	    case 'UPDATE_BASE' :
-	    case 'END_ANIMATING' :
+	    case CONSTANTS.UPDATE_STYLE :
+	    case CONSTANTS.UPDATE_BASE :
+	    case CONSTANTS.END_ANIMATING :
 	        return Object.assign({}, state, {
 	    		slider : sliderReducer(state.slider, action)
 	    	});

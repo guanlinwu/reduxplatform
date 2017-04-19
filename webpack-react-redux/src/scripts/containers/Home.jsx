@@ -2,15 +2,16 @@
  * 主页容器
  */
 
-'use strict';
 
-import React, { Component, PropTypes } from 'react';
+
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actlistActionCreators from 'scripts/actions/actlistActionCreators';
 
 
-import Actlist from 'scripts/components/Actlist/Actlist';
+import Actlist from 'scripts/components/ActList/ActList';
 
 /**
  * 智能组件

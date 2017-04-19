@@ -3,27 +3,24 @@
  * @module scripts/components/ActListItem
  * @requires react
  */
-'use strict';
 
-import React, {Component, PropTypes} from 'react';
+
+import React from 'react';
+import PropTypes from 'prop-types';
 import ActListImg from 'scripts/components/ActList/ActListImg';
 import ActListDesc from 'scripts/components/ActList/ActListDesc';
 
-export default class ActListItem extends Component {
-    constructor(props){
-        super(props);
-    }
-
-    render() {
-        let {imgBox, detailBox, id} = this.props.data;
-        return (
-            <li className="item">
-                <ActListImg data={imgBox} index={this.props.index} id={id} />
-                <ActListDesc actlistAction={this.props.actlistAction} data={detailBox} index={this.props.index} />
-            </li>
-        );
-    }
+const ActListItem = (props) => {
+    let {imgBox, detailBox, id} = props.data;
+    return (
+        <li className="item">
+            <ActListImg data={imgBox} index={props.index} id={id} />
+            <ActListDesc actlistAction={props.actlistAction} data={detailBox} index={props.index} />
+        </li>
+    );
 }
+
+export default ActListItem;
 
 /**
  * 属性类型

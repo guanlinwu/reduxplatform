@@ -1,10 +1,12 @@
 /**
  * actDetail
  */
+import * as CONSTANTS from 'constants';
+import * as actDetailModel from '../utils/model/actDetail.js';
 //fetch
 export function fetchActDetail(id){
   return dispatch => {
-    fetch(`/api/actdetail/${id}`)
+    actDetailModel.actDetail(id)
       .then(response => response.json())
       .then(json => dispatch(loadActDetail(json)));
   };
@@ -12,7 +14,7 @@ export function fetchActDetail(id){
 
 export function loadActDetail(item){
   return {
-      type : 'LOAD_ACTDETAIL',
+      type : CONSTANTS.LOAD_ACTDETAIL,
       item
   };
 }
@@ -23,6 +25,6 @@ export function loadActDetail(item){
  */
 export function unmountActDetail(){
   return {
-      type : 'UNMOUNT_ACTDETAIL'
+      type : CONSTANTS.UNMOUNT_ACTDETAIL
   };
 }

@@ -1,4 +1,4 @@
 export default {
   path: '/none',
-  onEnter: (_, replaceState) => replaceState(null, '/')
+  onEnter: (_, replaceState) => replaceState('/')
 };

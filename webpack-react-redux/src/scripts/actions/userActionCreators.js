@@ -2,9 +2,12 @@
  * actDetail
  */
 //fetch
+import * as CONSTANTS from 'constants';
+import * as user from '../utils/model/user';
+
 export function fetchUserMenus(){
   return dispatch => {
-    fetch(`/api/user/userMenus`)
+    user.userMenus()
       .then(response => response.json())
       .then(json => dispatch(loadUserMenu(json)));
   };
@@ -12,7 +15,7 @@ export function fetchUserMenus(){
 
 export function loadUserMenu(item){
   return {
-      type : 'LOAD_USERMENUS',
+      type : CONSTANTS.LOAD_USERMENUS,
       ...item
   };
 }
@@ -23,6 +26,6 @@ export function loadUserMenu(item){
  */
 export function unmountActDetail(){
   return {
-      type : 'UNMOUNT_USER'
+      type : CONSTANTS.UNMOUNT_USER
   };
 }

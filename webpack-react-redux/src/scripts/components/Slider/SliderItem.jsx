@@ -3,28 +3,22 @@
  * @module scripts/components/SliderItem
  * @requires react
  */
-'use strict';
+
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default class SliderItem extends React.Component {
-    constructor(props){
-        super(props);
-    }
-    componentDidMount() {
-
-    }
-    render() {
-        const {link, img} = this.props;
-        return (
-            <li>
-                <a href={link}>
-                    <img src={img} alt="" />
-                </a>
-            </li>
-        );
-    }
+const SliderItem = (props)=> {
+    const {link, img} = props;
+    return (
+        <li>
+            <a href={link}>
+                <img src={img} alt="" />
+            </a>
+        </li>
+    );
 }
+export default SliderItem;
 /**
  * 默认属性
  */
@@ -35,6 +29,6 @@ SliderItem.defaultProps = {
  * 属性类型
  */
 SliderItem.propTypes = {
-    link : React.PropTypes.string,
-    img : React.PropTypes.string
+    link : PropTypes.string,
+    img : PropTypes.string
 };

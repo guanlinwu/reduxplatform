@@ -2,7 +2,6 @@
 *  Import Components
 */
 import App from 'scripts/containers/App';
-// import Home from 'scripts/containers/Home';
 
 export default {
   path: '/',

@@ -5,13 +5,12 @@
 *  1. All Reducers which we combined into `rootReducer`
 *  2. An optional starting state - similar to React's getInitialState
 */
-'use strict';
 
 import { createStore, applyMiddleware, compose } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import thunkMiddleware from 'redux-thunk';
-import createLogger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 
 import rootReducer from 'scripts/reducers/index';
 
@@ -45,7 +44,6 @@ const store = createStore(rootReducer, defaultState, compose(
   ),
   enhancers
 ));
-
 /**
 * we export history because we need it in `reduxstagram.js` to feed into <Router>
 */

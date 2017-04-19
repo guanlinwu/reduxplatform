@@ -1,17 +1,17 @@
 /**
  * slider reducers
  */
-'use strict';
+import * as CONSTANTS from 'constants';
 
 export default function slider(state = {}, action) {
   let trackStyle;
   switch (action.type) {
-    case 'UPDATE_STYLE' :
+    case CONSTANTS.UPDATE_STYLE:
       trackStyle = Object.assign({}, state.trackStyle, action.item);
       return Object.assign({}, state, {trackStyle: trackStyle});
-    case 'UPDATE_BASE' :
+    case CONSTANTS.UPDATE_BASE:
       return Object.assign({}, state, action.item);
-    case 'END_ANIMATING' :
+    case CONSTANTS.END_ANIMATING:
       trackStyle = Object.assign({}, state.trackStyle, {
           WebkitTransition : '',
           transition       : ''

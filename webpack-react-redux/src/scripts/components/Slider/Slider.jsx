@@ -3,9 +3,10 @@
  * @module scripts/components/Slider
  * @requires react
  */
-'use strict';
 
-import React, {Component, PropTypes} from 'react';
+
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import SliderItem from 'scripts/components/Slider/SliderItem';
 import SliderTag from 'scripts/components/Slider/SliderTag';
 import 'scripts/components/Slider/_slider';
@@ -13,7 +14,7 @@ import 'scripts/components/Slider/_slider';
 export default class Slider extends Component {
     constructor(props){
         super(props);
-        this.ox, this.oy, this.nx, this.ny, this.timer;
+        // this.ox, this.oy, this.nx, this.ny, this.timer;
 
         this.swipeEnd     = this.swipeEnd.bind(this);
         this.swipeStart   = this.swipeStart.bind(this);
@@ -81,11 +82,11 @@ export default class Slider extends Component {
         if(dx>0) {
             console.log('swipeRight');
             activeIndex = activeIndex > 0 ? activeIndex - 1 : activeIndex;
-            this.turn(activeIndex, this.props.slider.activeIndex != activeIndex);
+            this.turn(activeIndex, this.props.slider.activeIndex !== activeIndex);
         }else {
             console.log('swipeLeft');
             activeIndex = activeIndex < this.props.slider.sliderCount - 1 ? activeIndex + 1 : activeIndex;
-            this.turn(activeIndex, this.props.slider.activeIndex != activeIndex);
+            this.turn(activeIndex, this.props.slider.activeIndex !== activeIndex);
         }
     }
 
@@ -98,7 +99,7 @@ export default class Slider extends Component {
             }
             let activeIndex = self.props.slider.activeIndex;
             activeIndex = activeIndex < self.props.slider.sliderCount - 1 ? activeIndex + 1 : activeIndex;
-            self.turn(activeIndex, self.props.slider.activeIndex != activeIndex);
+            self.turn(activeIndex, self.props.slider.activeIndex !== activeIndex);
         }, 4000, self);
     }
 
@@ -127,7 +128,7 @@ export default class Slider extends Component {
         return (
             <section className="m-card m-slider">
                 <ul style={trackStyle} className="m-slider-content" ref="sliderContent" onTouchStart={this.swipeStart} onTouchMove={this.swipeMove} onTouchEnd={this.swipeEnd}>
-                    {this.props.slider.content.map((content, index) => <SliderItem key={index} index={index} link={content.link} img={content.img} isActive={activeIndex == index}/>)}
+                    {this.props.slider.content.map((content, index) => <SliderItem key={index} index={index} link={content.link} img={content.img} isActive={activeIndex === index}/>)}
                 </ul>
                 <SliderTag activeIndex={activeIndex} length={this.props.slider.content.length} />
             </section>

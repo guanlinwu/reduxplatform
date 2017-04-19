@@ -2,9 +2,10 @@
  * 活动详情页容器
  */
 
-'use strict';
 
-import React, { Component, PropTypes } from 'react';
+
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actdetailActionCreators from 'scripts/actions/actdetailActionCreators';
@@ -29,7 +30,7 @@ class ActDetail extends Component {
     const { slider } = this.props.actdetail;
     return (
         <div className="act-detail">
-            {slider != undefined && <Slider slider={slider} sliderAction={this.props.sliderAction}/>}
+            {slider !== undefined && <Slider slider={slider} sliderAction={this.props.sliderAction}/>}
             <section className="m-card e-border-bottom base-info">
                 <div className="price-box f-clearfix">
                     <span className="pricebox-price"><i className="pricebox-yen">¥</i><em>508</em>起</span>

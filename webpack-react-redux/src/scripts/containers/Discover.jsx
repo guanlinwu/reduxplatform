@@ -2,9 +2,10 @@
  * 主页容器
  */
 
-'use strict';
 
-import React, { Component, PropTypes } from 'react';
+
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as discoverActionCreators from 'scripts/actions/discoverActionCreators';
@@ -23,7 +24,7 @@ class Discover extends Component {
     console.log('Discover', this.props);
     let {categories}  = this.props.discover;
     console.log(categories);
-    if(categories == undefined) {
+    if(categories === undefined) {
       for(var item in categoriesArr) {
         this.props.discoverAction.fetchCategories(categoriesArr[item]);
       }
@@ -56,8 +57,8 @@ Discover.propTypes = {
 
 Discover.propTypes = {
   children       : PropTypes.object.isRequired,
-  discover       : React.PropTypes.object.isRequired,
-  discoverAction : React.PropTypes.object.isRequired
+  discover       : PropTypes.object.isRequired,
+  discoverAction : PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {

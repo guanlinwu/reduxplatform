@@ -3,7 +3,7 @@
  * @module scripts/components/ToTop
  * @requires react
  */
-'use strict';
+
 
 import React from 'react';
 import 'scripts/components/ToTop/_toTop';

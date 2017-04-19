@@ -3,9 +3,10 @@
  * @module scripts/components/Category
  * @requires react
  */
-'use strict';
+
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class Category extends React.Component {
     constructor(props){
@@ -29,9 +30,9 @@ export default class Category extends React.Component {
                 <img src={imgUrl} alt=""/>
               </div>
               {isSubscribe ?
-                <a className="u-btn-border e-lightgray subscribe" href="javascript:;">取消订阅</a>
+                <a className="u-btn-border e-lightgray subscribe">取消订阅</a>
                 :
-                <a className="u-btn-border subscribe" href="javascript:;">订阅</a>
+                <a className="u-btn-border subscribe">订阅</a>
                 }
             </li>
         );
@@ -46,10 +47,10 @@ Category.defaultProps = {
  * 属性类型
  */
 Category.propTypes = {
-    imgUrl          : React.PropTypes.string.isRequired,
-    title           : React.PropTypes.string.isRequired,
-    belongTo        : React.PropTypes.string,
-    toggleSubscribe : React.PropTypes.func,
-    isSubscribe     : React.PropTypes.bool,
-    index           : React.PropTypes.number.isRequired
+    imgUrl          : PropTypes.string.isRequired,
+    title           : PropTypes.string.isRequired,
+    belongTo        : PropTypes.string,
+    toggleSubscribe : PropTypes.func,
+    isSubscribe     : PropTypes.bool,
+    index           : PropTypes.number.isRequired
 };

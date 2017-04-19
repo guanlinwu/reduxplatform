@@ -1,14 +1,14 @@
 /**
  * actlist reducers
  */
-'use strict';
+import * as CONSTANTS from 'constants';
 
 export default function actlist(state = {}, action) {
   switch (action.type) {
     /*
      收藏活动
      */
-    case 'TOGGLE_FAVOR' :
+    case CONSTANTS.TOGGLE_FAVOR:
 
       let actOptionArr   = state.listArr,
         index            = action.item.index,
@@ -36,7 +36,7 @@ export default function actlist(state = {}, action) {
     /*
      加载请求到的活动列表
      */
-    case 'LOAD_ACTLIST' :
+    case CONSTANTS.LOAD_ACTLIST:
     return {
       pageNum : action.item.pageNum,
       listArr : [

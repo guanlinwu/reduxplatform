@@ -3,23 +3,19 @@
  * @module scripts/components/Mask
  * @requires react
  */
-'use strict';
+
 
 import React from 'react';
 import 'scripts/components/Mask/_mask'
 
-export default class Mask extends React.Component {
-    constructor(props){
-        super(props);
-        console.log('Mask', props);
-    }
-    render() {
-        return (
-            <div className="u-mask">
-            </div>
-        );
-    }
+const Mask = (props)=> {
+    return (
+        <div className="u-mask">
+        </div>
+    );
 }
+
+export default Mask;
 /**
  * 默认属性
  */

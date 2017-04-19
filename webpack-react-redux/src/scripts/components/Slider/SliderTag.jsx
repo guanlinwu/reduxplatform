@@ -3,30 +3,24 @@
  * @module scripts/components/SliderTag
  * @requires react
  */
-'use strict';
+
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default class SliderTag extends React.Component {
-    constructor(props){
-        super(props);
+const SliderTag = (props)=> {
+    const {activeIndex, length} = props;
+    let emHtml = [];
+    for(let index=0; index<length; index++) {
+        emHtml.push(<em className={activeIndex===index ? 'active' : ''} key={index}>{index}</em>);
     }
-    componentDidMount() {
-
-    }
-    render() {
-        const {activeIndex, length} = this.props;
-        let emHtml = [];
-        for(let index=0; index<length; index++) {
-            emHtml.push(<em className={activeIndex==index ? 'active' : ''} key={index}>{index}</em>);
-        }
-        return (
-            <div className="m-slider-control">
-                {emHtml}
-            </div>
-        );
-    }
+    return (
+        <div className="m-slider-control">
+            {emHtml}
+        </div>
+    );
 }
+export default SliderTag;
 /**
  * 默认属性
  */
@@ -37,6 +31,6 @@ SliderTag.defaultProps = {
  * 属性类型
  */
 SliderTag.propTypes = {
-    activeIndex : React.PropTypes.number.isRequired,
-    length : React.PropTypes.number.isRequired
+    activeIndex : PropTypes.number.isRequired,
+    length : PropTypes.number.isRequired
 };

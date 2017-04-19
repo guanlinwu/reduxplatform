@@ -3,9 +3,10 @@
  * @module scripts/components/categories
  * @requires react
  */
-'use strict';
+
 
 import React from 'react';
+import PropTypes from 'prop-types';
 // jsx
 import Category from 'scripts/components/Categories/Category';
 // scss
@@ -37,8 +38,8 @@ Categories.defaultProps = {
  * 属性类型
  */
 Categories.propTypes = {
-    toggleSubscribe : React.PropTypes.func,
-    categories      : React.PropTypes.array,
-    title           : React.PropTypes.string,
-    belongTo        : React.PropTypes.string
+    toggleSubscribe : PropTypes.func,
+    categories      : PropTypes.array,
+    title           : PropTypes.string,
+    belongTo        : PropTypes.string
 };

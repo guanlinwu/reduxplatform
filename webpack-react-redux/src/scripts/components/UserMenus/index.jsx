@@ -3,28 +3,25 @@
  * @module scripts/components/UserMenus
  * @requires react
  */
-'use strict';
+
 
 import React from 'react';
 import Collect from 'scripts/components/UserMenus/Collect';
 import Follow from 'scripts/components/UserMenus/Follow';
 import Setting from 'scripts/components/UserMenus/Setting';
 
-export default class UserMenus extends React.Component {
-    constructor(props){
-        super(props);
-        console.log('UserMenus', props);
-    }
-    render() {
-        return (
-            <div className="m-catalog-list">
-                <Collect {...this.props.collect}/>
-                <Follow {...this.props.follow}/>
-                <Setting {...this.props.setting}/>
-            </div>
-        );
-    }
+const UserMenus = (props)=> {
+    console.log('UserMenus', props);
+    return (
+        <div className="m-catalog-list">
+            <Collect {...props.collect}/>
+            <Follow {...props.follow}/>
+            <Setting {...props.setting}/>
+        </div>
+    );
 }
+export default UserMenus;
+
 /**
  * 默认属性
  */

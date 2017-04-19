@@ -4,9 +4,11 @@
 /*
  更新轮播的父元素样式
  */
+import * as CONSTANTS from 'constants';
+
 export function updateStyle(item){
   return {
-    type: 'UPDATE_STYLE',
+    type: CONSTANTS.UPDATE_STYLE,
     item
   };
 }
@@ -16,7 +18,7 @@ export function updateStyle(item){
  */
 export function updateBase(item){
   return {
-    type: 'UPDATE_BASE',
+    type: CONSTANTS.UPDATE_BASE,
     item
   };
 }
@@ -26,6 +28,6 @@ export function updateBase(item){
  */
 export function endAnimating(){
   return {
-    type: 'END_ANIMATING'
+    type: CONSTANTS.END_ANIMATING
   };
 }

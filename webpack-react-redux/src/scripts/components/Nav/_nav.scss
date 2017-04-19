@@ -19,21 +19,18 @@
         @include prefix(box-sizing, border-box);
         // @include border-width-1px(1,1,1,1,#545e6e, .08rem);
         // @include prefix(border-radius, .04rem);
-        display:-webkit-box;
-        display: box;
+        display: flex;
         flex-flow: row wrap;
         text-align: center;
         overflow: hidden;
     }
 
     li.item{
-        -webkit-box-flex:1.0;
-        box-flex:1.0;
+        flex: 1 1 auto;
         font-size: .28rem;//放大两倍
         line-height: 1;
 
         a {
-            display:-webkit-box;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
