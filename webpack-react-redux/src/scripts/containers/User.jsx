@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
 import * as userActionCreators from 'scripts/actions/userActionCreators';
 
 import Mask from 'scripts/components/Mask';
@@ -21,7 +22,19 @@ import 'styles/page/_user.scss';
 class User extends Component {
   componentDidMount() {
     console.log('user', this.props);
-    this.props.userAction.fetchUserMenus();
+    let {isLogin} = this.props.user.login;
+    if(isLogin) {
+      /*
+      如果已经登陆
+       */
+      this.props.userAction.fetchUserMenus();
+    }
+    else {
+      /*
+      没有登陆，则默认跳去注册页面
+       */
+      browserHistory.push('/login/sign')
+    }
   }
   render() {
     return (

@@ -22,6 +22,13 @@ export default function user(state = {}, action) {
 				}
   			}
   		};
+    case CONSTANTS.LOGININ:
+        return {
+            ...state,
+                login : {
+                isLogin: true
+            }
+        }
     default:
       return state;
   }

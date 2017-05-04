@@ -19,6 +19,9 @@ const user = {
     		route   : 'none',
     		iconClass : 'icon-install',
     	}
+    },
+    login: {
+        isLogin: false
     }
 };
 

@@ -8,7 +8,6 @@
 import React from 'react';
 
 const MenuItem = (props)=> {
-    console.log('MenuItem', props);
     let {content, num, iconClass} = props;
       return (
         <div>

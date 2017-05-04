@@ -9,7 +9,6 @@ import React from 'react';
 import 'scripts/components/UserCard/_userCard'
 
 const UserCard = (props)=> {
-    console.log('UserCard', props);
     let {imgUrl, name} = props;
     return (
         <div className="user-card">

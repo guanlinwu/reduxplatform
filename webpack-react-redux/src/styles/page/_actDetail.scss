@@ -1,8 +1,87 @@
+@import "../utils/_mixins.scss";
+
 /*
  * 活动详情页
  */
 .act-detail {
+    .detail-info{
+        padding: .4rem .3rem .4rem .3rem;
 
+        >.title {
+            font-size: .36rem;
+        }
+    }
+    //预定须知（独立模块）
+    .define{
+        overflow: hidden;
+
+        .define-list{
+            font-size: .28rem;
+            line-height: .48rem;
+            >li{
+                color: #585c64;
+
+                &.e-order{
+                    .define-content{
+                        //带有1,2,3数字列表项的
+                        margin-left: .3rem;
+                    }
+
+                    .num{
+                        margin: 0 .06rem 0 -.3rem;
+                    }
+                }
+            }
+        }
+        .define-title{
+            font-size: .28rem;
+            color: #222;
+            font-weight: normal;
+        }
+        //行程介绍
+        &.e-define-tourinfo{
+            .define-list{
+                >li{
+                    margin-top: .2rem;
+
+                    &:first-child{
+                        margin-top: .32rem;
+                    }
+                }
+            }
+            .define-title{
+
+                [class^="u-icon-tour-"]{
+                    margin-top: -.06rem;
+                    margin-right: .07rem;
+                }
+            }
+            .define-content{
+                text-indent: .46rem;
+            }
+        }
+        //预定须知
+        &.e-define-bookinfo{
+
+            .define-list{
+                line-height: .44rem;
+
+                >li{
+                    padding: .32rem 0;
+                    @include border-width-1px(0,0,1,0);
+
+                    &:last-child{
+                        @include border-width-1px(0,0,0,0);
+                    }
+                }
+            }
+
+            .define-title{
+                margin-bottom: .14rem;
+            }
+
+        }
+    }
 }
 
 //基本信息：价格，名称，剩余时间，地方（独立模块）

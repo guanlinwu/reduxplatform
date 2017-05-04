@@ -1,0 +1,33 @@
+@import "../../../styles/utils/mixins";
+@import "../../../styles/utils/variables";
+//悬浮在底部或者顶部的块
+.m-navbar{
+    background-color: #fff;
+
+    &.e-fixed-bottom{
+        position: fixed;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+    &.e-fixed-top{
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+    }
+    &.e-border-top{
+        .navbar-container{
+            @include border-width-1px(1,0,0,0,$g-bordercolor);
+        }
+    }
+    .navbar-container{
+        @include prefix(box-sizing, border-box);
+        padding: .2rem .3rem;
+    }
+}
+
+//当引进底部悬浮块的时候，防止底部内容被底部悬浮块遮住
+// body,html{
+    // padding-bottom: 1.2rem;
+// }

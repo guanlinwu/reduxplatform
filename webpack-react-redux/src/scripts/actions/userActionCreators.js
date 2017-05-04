@@ -20,6 +20,12 @@ export function loadUserMenu(item){
   };
 }
 
+export function loginIn(){
+  return {
+      type : CONSTANTS.LOGININ
+  };
+}
+
 /**
  * [卸载组件前，销毁数据]
  * @return {object} [action]

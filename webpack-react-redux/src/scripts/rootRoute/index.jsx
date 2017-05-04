@@ -17,6 +17,7 @@ export default {
     require('./routes/actDetail').default,
     require('./routes/user').default,
     require('./routes/discover').default,
+    require('./routes/login').default,
     require('./routes/redirect').default,
   ]
 };
