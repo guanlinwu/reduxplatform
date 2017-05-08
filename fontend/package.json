@@ -1,7 +1,13 @@
 {
-  // "name": "reduxplatform",
-  "version": "0.1.0",
-  "private": true,
+  "name": "fontend",
+  "version": "1.0.0",
+  "description": "v3版本： node + 后台",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "isomorphic-fetch": "^2.2.1",
@@ -58,11 +64,6 @@
     "webpack-manifest-plugin": "1.1.0",
     "whatwg-fetch": "2.0.2"
   },
-  "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
-  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
@@ -86,6 +87,16 @@
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     }
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  },
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom"
   },
   "babel": {
     "presets": [
