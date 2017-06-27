@@ -30,10 +30,12 @@ class ActDetail extends Component {
     this.props.actdetailAction.unmountActDetail();
   }
   render() {
+    console.log(this.props.actdetail)
     const { slider } = this.props.actdetail,
     navBarProps = {
       text: '马上预定'
-    }
+    };
+    console.log('slider', slider)
     return (
         <div className="act-detail">
             {slider !== undefined && <Slider slider={slider} sliderAction={this.props.sliderAction}/>}

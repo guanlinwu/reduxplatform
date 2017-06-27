@@ -8,7 +8,7 @@ export function fetchActDetail(id){
   return dispatch => {
     actDetailModel.actDetail(id)
       .then(response => response.json())
-      .then(json => dispatch(loadActDetail(json)));
+      .then(json => dispatch(loadActDetail(json[0])));
   };
 }
 
