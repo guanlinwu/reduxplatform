@@ -37,11 +37,12 @@ class User extends Component {
     }
   }
   render() {
+    let { isLogin } = this.props.user.login;
     return (
       <div className="user">
         <Mask />
         <section className="m-card e-gap-top">
-          <UserCard name={'化成风'} imgUrl={'https://qnmob2.doubanio.com/view/movie_poster_cover/lpst/public/p2388938156.jpg'}/>
+            {isLogin && <UserCard name={'化成风'} imgUrl={'https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507024497.webp'}/>}
         </section>
         <section className="m-card user-menus e-gap-top">
           <UserMenus {...this.props.user.userMenus}/>

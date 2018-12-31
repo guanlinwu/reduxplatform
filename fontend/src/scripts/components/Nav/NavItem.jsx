@@ -46,6 +46,5 @@ NavItem.propTypes = {
     index     : PropTypes.number.isRequired,
     content   : PropTypes.string.isRequired,
     route     : PropTypes.string.isRequired,
-    navAction : PropTypes.object.isRequired,
     isActive  : PropTypes.bool.isRequired
 };
